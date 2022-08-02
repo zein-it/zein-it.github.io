@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Pengalaman Kerja</title>
+
+    <!-- Ini Link CSS -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css">
+    <style>
+        * {
+            font-family: 'Calibri';
+            color: #fff;
+            text-align: center;
+        }
+        body {
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.700),rgba(0, 0, 0, 0.700)), url(img/gambar2.jpg);
+            
+            /* height: 100vh; */
+            /* background: #043464;
+            background-image: url('galery/wp.jpeg'); */
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            background-position: center; 
+            background-size: cover; 
+        }
+
+        /* ukuran gambar */
+        img {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 1px rgba(125, 193, 206,.7);
+            margin: 0.75%;
+        }
+
+        /* Letak posisi gambar */
+        .imglist {
+            margin: auto;
+            /* margin-top: 100px; */
+            margin-top: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Judul Gambar */
+        .fancybox-caption {
+            color: #fff;
+            font-size: 20px;
+            /* padding-top: 1.5%; */
+            text-shadow: 0px 0px 4px black;
+            /* padding-top: 20px; */
+        }
+
+        .judul {
+            /* color: #000; */
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            font-style: normal;
+            font-size: xx-large;
+            /* text-shadow: 0px 0px 10px rgba(125, 193, 206,.7); */
+            margin-bottom: 0px;
+        }
+
+        .imglist img:hover {
+            transition: all 0.2s ease-in-out;
+            transform: scale(1.05);
+            /* box-shadow: 0px 0px 10px 5px #fff; */
+            box-shadow: 0px 0px 10px 5px rgba(179, 238, 250, 0.7);
+        }
+        /* .fancybox-button {
+            border-radius: 50px 50px 50px 50px;
+        } */
+        .fancybox-button:hover {
+            /* color: #fff; */
+            transition: all 0.2s ease-in-out;
+            transform: scale(1.1);
+            /* box-shadow: 0px 0px 5px 1px rgba(179, 238, 250, 0.7); */
+        }
+
+        footer .hak-cipta {
+            text-align: center;
+            font-size: 16px;
+            padding-bottom: 10px;
+        }
+
+        .tbl-back img {
+            position: absolute;
+            left: 15%;
+            width: 30px;
+            top: 4.5%;
+            height: auto;
+            box-shadow: none;
+            border-radius: 0px;
+        }
+        .tbl-back img:hover {
+            box-shadow: 0px 0px 4px 4px rgba(126, 249, 253, 0.733);
+            transition: all 0.2s ease-in-out;
+            transform: scale(1.3);
+        }
+
+        @media screen and (max-width:1090px) {
+            .tbl-back img {
+            position: absolute;
+            left: 17%;
+            width: 30px;
+            top: 5.5%;
+            height: auto;
+            box-shadow: none;
+            border-radius: 0px;
+            }
+            .sub-judul {
+            width: 85%;
+            display: block;
+            margin: auto;
+            margin-bottom: -20px;
+            }
+            /* Letak posisi gambar */
+
+        }
+        @media screen and (max-width:500px) {
+            /* .imglist {
+            margin: auto;
+            margin-top: 100px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            } */
+        }
+    </style>
+</head>
+<body oncontextmenu='return false;' ondragstart='return false' onselectstart='return false' style='cursor: default;'>
+<!-- <body> -->
+
+    <p class="judul"><a href="index.html" class="tbl-back"><img src="img/back.png"></a>Galeri</p>
+    <br><span class="sub-judul">Dokumentasi Aktifitas Kegiatan & Surat Pengalaman Kerja</span></br>
+    
+    <p class="imglist" style="max-width: 1000px;">
+
+        <a href="img/galeri_01.jpg" data-fancybox="images" data-caption="Perawatan CPU untuk menjaga performa perangkat IT">
+            <img src="img/galeri_01.jpg" alt="Periksa jaringan anda!">
+        </a>
+        <a href="img/galeri_02.jpg" data-fancybox="images" data-caption="Kunjungan dinas kerja untuk meeting divisi IT">
+            <img src="img/galeri_02.jpg" alt="Periksa jaringan anda!">
+        </a>
+        <a href="img/galeri_03.jpg" data-fancybox="images" data-caption="Cek modulasi radio HT jarak lebih dari 15 km dari repeater">
+            <img src="img/galeri_03.jpg" alt="Periksa jaringan anda!">
+        </a>
+        <a href="img/galeri_04.jpg" data-fancybox="images" data-caption="Perbaikan printer dari sisa tinta pembuangan">
+            <img src="img/galeri_04s.jpg" alt="Periksa jaringan anda!">
+        </a>
+        <a href="img/galeri_05.jpg" data-fancybox="images" data-caption="Pemetaan kerusakan untuk identifikasi masalah">
+            <img src="img/galeri_05.jpg" alt="Periksa jaringan anda!">
+        </a>
+        <a href="img/galeri_06.jpg" data-fancybox="images" data-caption="Upgrade pemasangan infrastruktur akses point">
+            <img src="img/galeri_06s.jpg" alt="Periksa jaringan anda!">
+        </a>
+        <a href="img/galeri_07.jpg" data-fancybox="images" data-caption="Surat Pengalaman Kerja PT.PAS">
+            <img src="img/galeri_07.jpg" alt="Periksa jaringan anda!">
+        </a>
+        <a href="img/galeri_08.jpg" data-fancybox="images" data-caption="Surat Pengalaman Kerja ANS Computer">
+            <img src="img/galeri_08.jpg" alt="Periksa jaringan anda!">
+        </a>
+    </p>
+
+    <footer>
+        <div class="hak-cipta">
+            HTML - CSS - Javascript | &copy; 2022. Zein-IT
+        </div>
+    </footer>
+
+    <!-- Ini Link JS -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+</body>
+</html>
