@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ijazah & Sertifikat</title>
+    <!-- <link rel="stylesheet" href="css/lightgallery.min.css"> -->
+    <link rel="stylesheet" href="css/lightgallery.css">
+    <!-- <link rel="stylesheet" href="css/style-doc.css"> -->
+
+    <style>
+        * {
+            font-family: 'Calibri';
+            color: #fff;
+
+            margin: 0;
+            padding: 0px;
+        }
+        body {
+            -webkit-touch-callout: none; 
+            -webkit-user-select: none;
+            -khtml-user-select: none; 
+            -moz-user-select: none; 
+            -ms-user-select: none;
+            user-select: none;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.700),rgba(0, 0, 0, 0.700)), url(img/gambar1.jpg);
+            
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            background-position: center; 
+            background-size: cover;
+        }
+        footer .hak-cipta {
+            text-align: center;
+            font-size: 16px;
+            padding-bottom: 10px;
+        }
+        .tbl-back img {
+            position: absolute;
+            /* left: 15%; */
+            left: 8%;
+            width: 30px;
+            top: 7%;
+            height: auto;
+            box-shadow: none;
+            border-radius: 0px;
+        }
+        .tbl-back img:hover {
+            box-shadow: 0px 0px 4px 4px mediumvioletred;
+            transition: all 0.2s ease-in-out;
+            transform: scale(1.3);
+        }
+        .judul {
+            /* color: #000; */
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            font-style: normal;
+            font-size: xx-large;
+            /* text-shadow: 0px 0px 10px rgba(125, 193, 206,.7); */
+            padding-top: 3%;
+            margin-bottom: 0px;
+        }
+        .sub-judul {
+            width: 85%;
+            display: block;
+            margin: auto;
+            margin-bottom: -20px;
+            text-align: center;
+            }
+
+        h3 {
+            font-family: josefin sans;
+            font-size: 25px;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: 600;
+            padding: 30px 0px;
+            width: 80%;
+            margin: auto;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+            padding: 30px 0px;
+        }
+
+        .container > a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            margin: 2%;
+        }
+
+        .container a img:hover{
+            transition: all 0.2s ease-in-out;
+            transform: scale(1.05);
+            box-shadow: 0px 0px 10px 5px mediumvioletred;
+        }
+
+        .container > a > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 0px 0px 10px #000;
+        }
+
+        .container {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            grid-auto-rows: 150px;
+            grid-auto-flow: dense;
+        }
+
+        .horizontal {
+            grid-column: span 2;
+        }
+
+        .vertical {
+            grid-row: span 2;
+            align-items: baseline;
+        }
+
+        .big {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        @media screen and (max-width:1090px) {
+            .tbl-back img {
+            position: absolute;
+            left: 9%;
+            width: 30px;
+            top: 7%;
+            /* padding-top: 1.5%; */
+            height: auto;
+            box-shadow: none;
+            border-radius: 0px;
+            }
+        }
+        @media screen and (max-width:490px) {
+            /* .body {
+                margin-top: 15%;
+            } */
+            .judul {
+            /* color: white;
+            text-align: center;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 20px; */
+            padding-top: 10%;
+            /* margin-bottom: 0px; */
+            }
+        }
+    </style>
+
+</head>
+<body oncontextmenu='return false;' ondragstart='return false' onselectstart='return false' style='cursor: default;'></body>
+<!-- <body> -->
+    <!-- <h3>Ijazah & Sertifikat</h3> -->
+    <p class="judul"><a href="index.html" class="tbl-back"><img src="img/back.png"></a>Galeri</p>
+    <br><span class="sub-judul">Ijazah | Transkrip Nilai | Sertifikat</span></br>
+    <div class="container" id="lightgallery">
+        <a href="img/ijazah.jpg" class="big">
+            <img src="img/ijazah.jpg" />
+        </a>
+        <a href="img/transkip.jpg" class="big">
+            <img src="img/transkip.jpg" />
+        </a>
+        <a href="img/skkni.jpg" class="big">
+            <img src="img/skkni.jpg" />
+        </a>
+        <a href="img/msme_01.jpg" class="big">
+            <img src="img/msme_01.jpg" />
+        </a>
+        <a href="img/msme_02.jpg" class="big">
+            <img src="img/msme_02.jpg" />
+        </a>
+        <a href="img/msme_03.jpg" class="big">
+            <img src="img/msme_03.jpg" />
+        </a>
+        <a href="img/expert_01.jpg" class="big">
+            <img src="img/expert_01.jpg" />
+        </a>
+        <a href="img/expert_02.jpg" class="big">
+            <img src="img/expert_02.jpg" />
+        </a>
+        <a href="img/expert_03.jpg" class="big">
+            <img src="img/expert_03.jpg" />
+        </a>
+        <a href="img/expert_04.jpg" class="big">
+            <img src="img/expert_04.jpg" />
+        </a>
+        <a href="img/training_01.jpg" class="big">
+            <img src="img/training_01.jpg" />
+        </a>
+        <a href="img/training_02.jpg" class="big">
+            <img src="img/training_02.jpg" />
+        </a>
+        <a href="img/training_03.jpg" class="big">
+            <img src="img/training_03.jpg" />
+        </a>
+    </div>
+
+    <footer>
+        <div class="hak-cipta">
+            HTML - CSS - Javascript | &copy; 2022. Zein-IT
+        </div>
+    </footer>
+
+    <script src="js/lightgallery.js"></script>
+    <script>
+        var imagPop = document.getElementById("lightgallery");
+        lightGallery(imagPop);
+    </script>
+    
+</body>
+</html>
