@@ -1,16 +1,584 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="id-ID">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Akhmad Jaini</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/hakcipta.css"> -->
+
 </head>
 <!-- <body oncontextmenu='return false;' onkeydown='return false;' onmousedown='return false;' ondragstart='return false' onselectstart='return false' style='-moz-user-select: none; cursor: default;'> -->
-<body oncontextmenu='return false;' ondragstart='return false' onselectstart='return false' style='cursor: default;'>
+<!-- <body oncontextmenu='return false;' onkeydown='return false;' onmousedown='return false;' ondragstart='return false' onselectstart='return false' style {-moz-user-select: none; cursor: default;}> -->
+<body oncontextmenu='return false;' ondragstart='return false' onselectstart='return false' style {-moz-user-select: none; cursor: default;}>
+    <script src='js/jquery-3.6.0.js?ver=3.6.0' id='jquery-core-js'></script>
+    <div id="ays_tooltip" >Konten dilindungi hak cipta © Zein-IT.</div>
+    <style>
+        #ays_tooltip,.ays_tooltip_class {
+            display: none;
+            position: absolute;
+            z-index: 999999999;
+            background-color: #ffffff;
+            
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            opacity:1;
+            border: 1px solid #b7b7b7;
+            border-radius: 3px;
+            box-shadow: rgba(0,0,0,0) 0px 0px 15px  1px;
+            color: #ff0000;
+            padding: 5px;
+            font-size: 12px;
+            text-transform: none;
+            ;
+        }
+        
+        #ays_tooltip > *, .ays_tooltip_class > * {
+            color: #ff0000;
+            font-size: 12px;
+        }
+       
+    </style>
+<style>
+*:not(input):not(textarea)::selection {
+background-color: transparent !important;
+color: inherit !important;
+}
+
+*:not(input):not(textarea)::-moz-selection {
+background-color: transparent !important;
+color: inherit !important;
+}
+
+</style>
+<script>
+// window.addEventListener("DOMContentLoaded",function(){
+function stopPrntScr() {
+var inpFld = document.createElement("input");
+inpFld.setAttribute("value", "Access Denied");
+inpFld.setAttribute("width", "0");
+inpFld.style.height = "0px";
+inpFld.style.width = "0px";
+inpFld.style.border = "0px";
+document.body.appendChild(inpFld);
+inpFld.select();
+document.execCommand("copy");
+inpFld.remove(inpFld);
+}
+
+(function ($) {
+'use strict';
+$(function () {
+    let all = $('*').not('script, meta, link, style, noscript, title'),
+        tooltip = $('#ays_tooltip'),
+        tooltipClass = "mouse";
+    if (tooltipClass == "mouse" || tooltipClass == "mouse_first_pos") {
+                                $(document).on('mousemove', function (e) {
+            let cordinate_x = e.pageX;
+            let cordinate_y = e.pageY;
+            let windowWidth = $(window).width();
+            if (cordinate_y < tooltip.outerHeight()) {
+                tooltip.css({'top': (cordinate_y + 10) + 'px'});
+            } else {
+                tooltip.css({'top': (cordinate_y - tooltip.outerHeight()) + 'px'});
+            }
+            if (cordinate_x > (windowWidth - tooltip.outerWidth())) {
+                tooltip.css({'left': (cordinate_x - tooltip.outerWidth()) + 'px'});
+            } else {
+                tooltip.css({'left': (cordinate_x + 5) + 'px'});
+            }
+
+        });
+                            } else {
+        tooltip.addClass(tooltipClass);
+    }
+                        $(window).on('keyup', function (e) {
+        let keyCode = e.keyCode ? e.keyCode : e.which;
+        if (keyCode == 44) {
+            stopPrntScr();
+            show_tooltip(1 );
+            audio_play();
+        }
+    });
+    
+
+                        $(document).on('contextmenu', function (e) {
+        let target = $(event.target);
+        if (!target.is("")) {
+            let t = e || window.event;
+            let n = t.target || t.srcElement;
+            if (n.nodeName !== "A") {
+                show_tooltip(1 );
+                audio_play();
+            }
+            return false;
+        }
+    });
+    
+
+                        $(document).on('contextmenu', function (e) {
+        let target = $(event.target);
+        if (target.is("img") || target.is("div.ays_tooltip_class")) {
+            let t = e || window.event;
+            let n = t.target || t.srcElement;
+            if (n.nodeName !== "A") {
+                show_tooltip(1 );
+                audio_play();
+            }
+            return false;
+        }
+    });
+    
+    
+                        $(document).on('dragstart', function () {
+        let target = $(event.target);
+        if (!target.is("")) {
+            show_tooltip(1 );
+            audio_play();
+            return false;
+        }
+    });
+    
+    
+    $(window).on('keydown', function (event) {
+        var sccp_selObj = window.getSelection();
+        var check_selectors = true;
+        if (!sccp_selObj.rangeCount < 1) {
+            var sccp_selRange = sccp_selObj.getRangeAt(0);
+            var sccp_selection_selector = sccp_selRange.startContainer.parentElement;
+            check_selectors = !$(sccp_selection_selector).is("");
+        }
+
+        if (check_selectors) {
+            var isOpera = (BrowserDetect.browser === "Opera");
+
+            var isFirefox = (BrowserDetect.browser === 'Firefox');
+
+            var isSafari = (BrowserDetect.browser === 'Safari');
+
+            var isIE = (BrowserDetect.browser === 'Explorer');
+            var isChrome = (BrowserDetect.browser === 'Chrome');
+            var isMozilla = (BrowserDetect.browser === 'Mozilla');
+
+            if (BrowserDetect.OS === 'Windows') {
+                                                if (isChrome) {
+                    if (((event.ctrlKey && event.shiftKey) && (
+                        event.keyCode === 73 ||
+                        event.keyCode === 74 ||
+                        event.keyCode === 68 ||
+                        event.keyCode === 67))) {
+                        show_tooltip(1);
+                        audio_play();
+                        return false;
+                    }
+                }
+                if (isFirefox) {
+                    if (((event.ctrlKey && event.shiftKey) && (
+                        event.keyCode === 73 ||
+                        event.keyCode === 74 ||
+                        event.keyCode === 67 ||
+                        event.keyCode === 75 ||
+                        event.keyCode === 69)) ||
+                        event.keyCode === 118 ||                                    
+                        (event.keyCode === 112 && event.shiftKey) ||
+                        (event.keyCode === 115 && event.shiftKey) ||
+                        (event.keyCode === 118 && event.shiftKey) ||
+                        (event.keyCode === 120 && event.shiftKey)) {
+                        show_tooltip(1);
+                        audio_play();
+                        return false;
+                    }
+                }
+                if (isOpera) {
+                    if (((event.ctrlKey && event.shiftKey) && (
+                        event.keyCode === 73 ||
+                        event.keyCode === 74 ||
+                        event.keyCode === 67 ||
+                        event.keyCode === 88 ||
+                        event.keyCode === 69))) {
+                        show_tooltip(1);
+                        audio_play();
+                        return false;
+                    }
+                }
+                if (isIE) {
+                    if ((event.keyCode === 123 && event.shiftKey)) {
+                        show_tooltip(1);
+                        audio_play();
+                        return false;
+                    }
+                }                         
+                if (isMozilla) {
+                    if ((event.ctrlKey && event.keyCode === 73) || 
+                        (event.altKey && event.keyCode === 68)) {
+                        show_tooltip(1);
+                        audio_play();
+                        return false;
+                    }
+                }
+                
+                                                if ((event.keyCode === 83 && event.ctrlKey)) {
+                    show_tooltip(1);
+                    audio_play();
+                    return false;
+                }
+                
+                                                if ((event.keyCode === 65 && event.ctrlKey)) {
+
+                                                            show_tooltip(1);
+                        audio_play();
+                        return false;
+                                                    }
+                
+                                                if (event.keyCode === 67 && event.ctrlKey && !event.shiftKey) {
+                                                            show_tooltip(1);
+                        audio_play();
+                        return false;
+                                                    }
+                
+                                                if ((event.keyCode === 86 && event.ctrlKey)) {
+                                                            show_tooltip(1);
+                        audio_play();
+                        return false;
+                                                    }
+                
+                                                if ((event.keyCode === 88 && event.ctrlKey)) {
+                                                            show_tooltip(1 );
+                        audio_play();
+                        return false;
+                                                    }
+                
+                                                if ((event.keyCode === 85 && event.ctrlKey)) {
+                    show_tooltip(1 );
+                    audio_play();
+                    return false;
+                }
+                
+                
+                
+                
+                
+                                                
+
+                
+                
+                
+                
+                
+                                                if (event.keyCode === 123 || (event.keyCode === 123 && event.shiftKey)) {
+                    show_tooltip(1);
+                    audio_play();
+                    return false;
+                }
+                                            } else if (BrowserDetect.OS === 'Linux') {
+                                                if (isChrome) {
+                    if (
+                        (
+                            (event.ctrlKey && event.shiftKey) &&
+                            (event.keyCode === 73 ||
+                                event.keyCode === 74 ||
+                                event.keyCode === 67
+                            )
+                        ) ||
+                        (event.ctrlKey && event.keyCode === 85)
+                    ) {
+                        show_tooltip(1);
+                        audio_play();
+                        return false;
+                    }
+                }
+                if (isFirefox) {
+                    if (((event.ctrlKey && event.shiftKey) && (event.keyCode === 73 || event.keyCode === 74 || event.keyCode === 67 || event.keyCode === 75 || event.keyCode === 69)) || event.keyCode === 118 || event.keyCode === 116 || (event.keyCode === 112 && event.shiftKey) || (event.keyCode === 115 && event.shiftKey) || (event.keyCode === 118 && event.shiftKey) || (event.keyCode === 120 && event.shiftKey) || (event.keyCode === 85 && event.ctrlKey)) {
+                        show_tooltip(1);
+                        audio_play();
+                        return false;
+                    }
+                }
+                if (isOpera) {
+                    if (((event.ctrlKey && event.shiftKey) && (event.keyCode === 73 || event.keyCode === 74 || event.keyCode === 67 || event.keyCode === 88 || event.keyCode === 69)) || (event.ctrlKey && event.keyCode === 85)) {
+                        show_tooltip(1);
+                        audio_play();
+                        return false;
+                    }
+                }
+                
+                                                if ((event.keyCode === 83 && event.ctrlKey)) {
+                    show_tooltip(1);
+                    audio_play();
+                    return false;
+                }
+                
+                                                if (event.keyCode === 65 && event.ctrlKey) {
+                                                            show_tooltip(1);
+                        audio_play();
+                        return false;
+                                                    }
+                
+                                                if (event.keyCode === 67 && event.ctrlKey && !event.shiftKey) {
+                                                            show_tooltip(1);
+                        audio_play();
+                        return false;
+                                                    }
+                
+                                                if ((event.keyCode === 86 && event.ctrlKey)) {
+                                                            show_tooltip(1);
+                        audio_play();
+                        return false;
+                                                    }
+                
+                                                if ((event.keyCode === 88 && event.ctrlKey)) {
+                                                            show_tooltip(1);
+                        audio_play();
+                        return false;
+                                                    }
+                
+                                                if ((event.keyCode === 85 && event.ctrlKey)) {
+                    show_tooltip(1 );
+                    audio_play();
+                    return false;
+                }
+                
+                
+                
+                
+                
+                                                
+
+                
+                
+                
+                
+                
+                                                if (event.keyCode === 123 || (event.keyCode === 123 && event.shiftKey)) {
+                    show_tooltip(1);
+                    audio_play();
+                    return false;
+                }
+                                            } else if (BrowserDetect.OS === 'Mac') {
+                                                if (isChrome || isSafari || isOpera || isFirefox) {
+                    if (event.metaKey && (
+                        event.keyCode === 73 ||
+                        event.keyCode === 74 ||
+                        event.keyCode === 69 ||
+                        event.keyCode === 75)) {
+                        show_tooltip(1);
+                        audio_play();
+                        return false;
+                    }
+                }
+                
+                                                if ((event.keyCode === 83 && event.metaKey)) {
+                    show_tooltip(1);
+                    audio_play();
+                    return false;
+                }
+                
+                                                if ((event.keyCode === 65 && event.metaKey)) {
+                                                            show_tooltip(1);
+                        audio_play();
+                        return false;
+                                                    }
+                
+                                                if ((event.keyCode === 67 && event.metaKey)) {
+                                                            show_tooltip(1);
+                        audio_play();
+                        return false;
+                                                    }
+                
+                                                if ((event.keyCode === 86 && event.metaKey)) {
+                                                            show_tooltip(1);
+                        audio_play();
+                        return false;
+                                                    }
+                
+                                                if ((event.keyCode === 88 && event.metaKey)) {
+                                                            show_tooltip(1);
+                        audio_play();
+                        return false;
+                                                    }
+                
+                                                if ((event.keyCode === 85 && event.metaKey)) {
+                    show_tooltip(1 );
+                    audio_play();
+                    return false;
+                }
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                                                if (event.keyCode === 123) {
+                    show_tooltip(1);
+                    audio_play();
+                    return false;
+                }
+                                            }
+        }
+    });
+
+    function disableSelection(e) {
+        if (typeof e.onselectstart !== "undefined")
+            e.onselectstart = function () {
+                show_tooltip( );
+                audio_play();
+                return false
+            };
+        else if (typeof e.style.MozUserSelect !== "undefined")
+            e.style.MozUserSelect = "none";
+        else e.onmousedown = function () {
+                show_tooltip();
+                audio_play();
+                return false
+            };
+        e.style.cursor = "default"
+    }
+
+    var msg_count = 1; 
+    function show_tooltip(mess) {
+        if (mess && msg_count == 1) {
+            if (tooltipClass == 'mouse_first_pos') {
+                if ($('#ays_tooltip2').length > 0) {
+                    $('#ays_tooltip2').remove();
+                }
+                var tooltip2 = tooltip.clone().prop('id','ays_tooltip2').insertBefore(tooltip);
+                $('#ays_tooltip2').addClass('ays_tooltip_class');
+                tooltip2.css({'display': 'table'});
+                $('#ays_tooltip').fadeOut();
+                setTimeout(function () {
+                    tooltip2.remove();
+                }, 1000);
+            }else{
+                tooltip.css({'display': 'table'});
+                setTimeout(function () {
+                    $('#ays_tooltip').fadeOut(500);
+                }, 1000);
+            }
+        }
+
+                            }
+
+    function audio_play(audio) {
+        if (audio) {
+            var audio = document.getElementById("sccp_public_audio");
+            if (audio) {
+                audio.currentTime = 0;
+                audio.play();
+            }
+
+        }
+    }
+
+
+});
+})(jQuery);
+var copyrightText = '';
+var copyrightIncludeUrl = '';
+var copyrightWord = '';
+        
+var BrowserDetect = {
+init: function () {
+    this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
+    this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "an unknown version";
+    this.OS = this.searchString(this.dataOS) || "an unknown OS";
+},
+searchString: function (data) {
+    for (var i = 0; i < data.length; i++) {
+        var dataString = data[i].string;
+        var dataProp = data[i].prop;
+        this.versionSearchString = data[i].versionSearch || data[i].identity;
+        if (dataString) {
+            if (dataString.indexOf(data[i].subString) !== -1) return data[i].identity;
+        } else if (dataProp) return data[i].identity;
+    }
+},
+searchVersion: function (dataString) {
+    var index = dataString.indexOf(this.versionSearchString);
+    if (index === -1) return;
+    return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
+},
+dataBrowser: [{
+    string: navigator.userAgent,
+    subString: "Chrome",
+    identity: "Chrome"
+}, {
+    string: navigator.userAgent,
+    subString: "OmniWeb",
+    versionSearch: "OmniWeb/",
+    identity: "OmniWeb"
+}, {
+    string: navigator.vendor,
+    subString: "Apple",
+    identity: "Safari",
+    versionSearch: "Version"
+}, {
+    prop: window.opera,
+    identity: "Opera",
+    versionSearch: "Version"
+}, {
+    string: navigator.vendor,
+    subString: "iCab",
+    identity: "iCab"
+}, {
+    string: navigator.vendor,
+    subString: "KDE",
+    identity: "Konqueror"
+}, {
+    string: navigator.userAgent,
+    subString: "Firefox",
+    identity: "Firefox"
+}, {
+    string: navigator.vendor,
+    subString: "Camino",
+    identity: "Camino"
+}, { // for newer Netscapes (6+)
+    string: navigator.userAgent,
+    subString: "Netscape",
+    identity: "Netscape"
+}, {
+    string: navigator.userAgent,
+    subString: "MSIE",
+    identity: "Explorer",
+    versionSearch: "MSIE"
+}, {
+    string: navigator.userAgent,
+    subString: "Gecko",
+    identity: "Mozilla",
+    versionSearch: "rv"
+}, { // for older Netscapes (4-)
+    string: navigator.userAgent,
+    subString: "Mozilla",
+    identity: "Netscape",
+    versionSearch: "Mozilla"
+}],
+dataOS: [{
+    string: navigator.platform,
+    subString: "Win",
+    identity: "Windows"
+}, {
+    string: navigator.platform,
+    subString: "Mac",
+    identity: "Mac"
+}, {
+    string: navigator.userAgent,
+    subString: "iPhone",
+    identity: "iPhone/iPod"
+}, {
+    string: navigator.platform,
+    subString: "Linux",
+    identity: "Linux"
+}]
+};
+BrowserDetect.init();
+// }, false);
+</script>
+
     <header>
         <div class="mode">
             <h1>Selamat Datang</h1>
@@ -21,14 +589,13 @@
         </div>
     </header>
 
-    <div class="layar-depan">
-        <main>
+        <!-- <main> -->
             <section id="identitas">
                 <div class="tentang-saya">
                     <hr>
                     <div class="identitas">
                         <div class="nama">
-                            <a>
+                            <a oncontextmenu='return false;' onkeydown='return false;' onmousedown='return false;' ondragstart='return false' onselectstart='return false' -moz-user-select: none; cursor: default;>
                                 <span class="tombol-terang"><img src="img/foto2.jpg"></span>
                                 <span class="tombol-gelap"><img src="img/foto.jpg"></span>
                             </a><br>
@@ -41,7 +608,7 @@
                             </p>
                             <p><a href="mailto:berkah.rezeki7@gmail.com?subject=Undangan%20Rekrutmen&body=Terima%20Kasih" target="_blank">BERKAH.REZEKI7@GMAIL.COM</a></p>
                             <p><a href="https://www.linkedin.com/in/zein-it" target="_blank">LINKEDIN.COM/IN/ZEIN-IT</a></p>
-                            <p><a href="https://zein-it.github.io" target="blank">ZEIN-IT.GITHUB.IO</a></p>
+                            <p><a href="https://zein-it.github.io">ZEIN-IT.GITHUB.IO</a></p>
                         </div>
                         <div class="rincian">
                             <p>Lajang<br>30 tahun</p><hr class="garis">
@@ -67,7 +634,7 @@
                 </h3><hr>
                 <div class="andalan">
                     <div class="keahlian">
-                            <ul><span>Pemasangan, pengaturan/konfigurasi, operasi, perawatan, perbaikan, pemecahan masalah :</span>
+                            <ul><span>Pemasangan, pengaturan/konfigurasi, menggunakan, perawatan, perbaikan, pemecahan masalah :</span>
                                 <li>Perangkat lunak dan perangkat keras</li>
                                 <li>Komputer : PC, Desktop, Notebook, Netbook</li>
                                 <li>Printer : Inkjet, Laserjet, Dotmetrik</li>
@@ -75,8 +642,8 @@
                                 <li>Finger Print : Rentris, Magic</li>
                                 <li>Pilot Drone : DJI Spark</li>
                                 <li>Radio HT : Hytera</li>
-                                <li>Front End Stack : HTML, CSS, Javascript, Github</li>
-                                <li>Winbox, Window Server, Excel, Word, Photoshop</li>
+                                <li>Front End Stack : HTML, CSS, Javascript, Git</li>
+                                <li>Excel, Word, Photoshop, Winbox, Windows.</li>
                             </ul>
                         
                         <!-- <h3>Keahlian Andalan</h3><hr> -->
@@ -114,15 +681,15 @@
                         </div>
                         <div class="jobdesk">
                             <ul>
-                                <li>Cek server & aplikasi yang akan digunakan user</li>
-                                <li>Cek jaringan lokal dan internet</li>
-                                <li>Cek perangkat/aplikasi IT yang akan digunakan user</li>
-                                <li>Membantu memecahkan permasalahan user tentang IT</li>
-                                <li>Pemasangan/ pengaturan/ konfigurasi perangkat/aplikasi IT</li>
+                                <li>Cek perangkat server & aplikasi yang akan digunakan user</li>
+                                <li>Pemantauan jaringan lokal dan internet</li>
+                                <li>Mengontrol perangkat/aplikasi IT yang akan digunakan user</li>
+                                <li>Memecahkan permasalahan user tentang isu IT</li>
+                                <li>Pemasangan/ pengaturan/konfigurasi perangkat/aplikasi IT</li>
                                 <li>Melakukan pemeliharaan perawatan perangkat IT</li>
                                 <li>Menyelesaikan projek/upgrade insftastruktur IT</li>
                                 <li>Membuat laporan harian, terjadwal dan keperluan lainnya</li>
-                                <li>Komunikasi/ mengawasi tentang barang/ jasa dari vendor</li>
+                                <li>Komunikasi/mengawasi tentang barang/jasa dari vendor</li>
                             </ul>
                         </div>
                     </div>
@@ -139,9 +706,9 @@
                         </div>
                         <div class="jobdesk">
                             <ul>
-                                <li>Cek/memecahkan masalah pelanggan</li>
-                                <li>Memberikan petunjuk/ solusi/ saran kepada pelanggan</li>
-                                <li>Memperbaiki laptop, PC, & printer</li>
+                                <li>Analisa permasalahan konsumen</li>
+                                <li>Memberikan petunjuk/ solusi/ saran kepada konsumen</li>
+                                <li>Memperbaiki laptop, komputer & printer</li>
                                 <li>Pemasangan hardware/software</li>
                                 <li>Troubleshooting, maintenance, repair, soldering blower.</li>
                             </ul>
@@ -186,24 +753,19 @@
                                 <a class="nama1">Rekayasa Perangkat Lunak</a>
                             </p>
                             <p>
-                                <a class="nama2">SMK Sabumi (pertambangan)</a>
+                                <a class="nama2">SMK Sabumi (Pertambangan)</a>
                             </p>
                         </div>
                     </div><hr/>
                 </div>
             </section>
-        </main>
-    </div>
+        <!-- </main> -->
 
     <footer>
-        <!-- <div id="ays_tooltip" >Konten dilindungi hak cipta © Zein-IT.</div> -->
         <div class="hak-cipta">
             HTML - CSS - Javascript | &copy; 2022. Zein-IT
         </div>
-        <!-- <div id="ays_tooltip" >Konten dilindungi hak cipta © Zein-IT.</div> -->
     </footer>
-    <!-- <script src="javascript.js"></script> -->
     <script src="js/javascript.js"></script>
-    <!-- <script src="js/hakcipta.js"></script> -->
 </body>
 </html>
