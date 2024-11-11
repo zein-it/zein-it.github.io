@@ -1,0 +1,79 @@
+/* Default layout for screens larger than 800px */
+.andalan_surat {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.keahlian_sertifikat ul {
+    list-style: none;
+    padding: 0;
+}
+
+.keahlian_sertifikat ul li {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    background-color: cadetblue;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.gelap .keahlian_sertifikat ul li {
+    background-color: teal;
+}
+
+.keahlian_sertifikat ul li:hover {
+    background-color: darkseagreen;
+}
+
+.gelap .keahlian_sertifikat ul li:hover {
+    background-color: darkorange;
+}
+
+.slides img.active {
+    display: block;
+}
+
+/* Responsive layout for screens smaller than 800px */
+@media screen and (max-width: 800px) {
+    .andalan_surat {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gambar_sertifikat, .keahlian_sertifikat {
+        width: 100%;
+    }
+}
+
+.slide-container {
+    height: 225px; /* Batasi tinggi agar efek scroll terlihat */
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slides {
+    display: flex;
+    flex-direction: column; /* Tampilkan gambar secara vertikal */
+    transition: transform 0.5s ease; /* Animasi transisi */
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+    display: none;
+    transition: opacity 0.5s ease-in-out, transform 0.5s;
+}
+
+.keahlian_sertifikat ul li.active {
+    font-weight: bold;
+    color: black; /* Warna untuk menandai item yang aktif */
+}
+
+.gelap .keahlian_sertifikat ul li.active {
+    font-weight: bold;
+    color: white; /* Warna untuk menandai item yang aktif */
+}
