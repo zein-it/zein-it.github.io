@@ -36,20 +36,8 @@
     display: block;
 }
 
-/* Responsive layout for screens smaller than 800px */
-@media screen and (max-width: 800px) {
-    .andalan_surat {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .gambar_sertifikat, .keahlian_sertifikat {
-        width: 100%;
-    }
-}
-
 .slide-container {
-    height: 225px; /* Batasi tinggi agar efek scroll terlihat */
+    height: 215px; /* Batasi tinggi agar efek scroll terlihat */
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -76,4 +64,23 @@
 .gelap .keahlian_sertifikat ul li.active {
     font-weight: bold;
     color: white; /* Warna untuk menandai item yang aktif */
+}
+
+.keahlian_sertifikat ul {
+    white-space: nowrap;
+    /* word-wrap: normal;
+    overflow: visible; */
+    /* properti word-wrap atau properti overflow-wrap */
+}
+
+/* Responsive layout for screens smaller than 800px */
+@media screen and (max-width: 800px) {
+    .andalan_surat {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gambar_sertifikat, .keahlian_sertifikat {
+        width: 100%;
+    }
 }
