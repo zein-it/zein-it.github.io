@@ -4,15 +4,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const slideContainer = document.querySelector('.slide-container');
     let currentIndex = 0;
     let scrollInterval;
+    let isManualChange = false; // untuk melacak apakah perubahan berasal dari klik manual
     const scrollSpeed = 30; // Kecepatan scroll (ms)
     const delayBeforeScroll = 800; // Waktu jeda sebelum scroll dimulai (ms)
     const delayAfterScroll = 800; // Waktu jeda setelah scroll selesai (ms)
+    const autoSlideDelay = 800; // Jeda auto-slide setelah interaksi manual (ms)
 
     // Fungsi scroll otomatis gambar
     function scrollImage() {
         slideContainer.scrollTop = 0; // Reset posisi scroll ke atas
         slides.forEach((img, index) => img.classList.toggle('active', index === currentIndex));
-        skillItems.forEach((item, index) => item.classList.toggle('active', index === currentIndex)); // Tandai item aktif
+        skillItems.forEach((item, index) => item.classList.toggle('active', index === currentIndex));
 
         // Jeda sebelum scroll dimulai
         setTimeout(() => {
@@ -21,7 +23,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     slideContainer.scrollTop += 1; // Scroll ke bawah
                 } else {
                     clearInterval(scrollInterval);
-                    setTimeout(showNextSlide, delayAfterScroll); // Jeda sebelum pindah slide
+                    setTimeout(() => {
+                        if (!isManualChange) showNextSlide(); // Pindah slide hanya jika tidak ada klik manual
+                        isManualChange = false; // Reset perubahan manual
+                    }, delayAfterScroll);
                 }
             }, scrollSpeed);
         }, delayBeforeScroll);
@@ -35,11 +40,18 @@ document.addEventListener("DOMContentLoaded", function() {
         scrollImage();
     }
 
-    // Fungsi untuk reset slideshow ketika salah satu skill diklik
+    // Fungsi untuk reset slideshow saat item skill di-klik
     function resetSlideshowOnSkillClick(index) {
         clearInterval(scrollInterval); // Hentikan scroll otomatis
         currentIndex = index; // Update indeks ke yang diklik
+        isManualChange = true; // Tandai bahwa perubahan adalah manual
         scrollImage(); // Mulai ulang dengan gambar baru
+
+        // setTimeout(() => {
+        //     isManualChange = false;
+        //     showNextSlide();
+        // }, autoSlideDelay);
+        
     }
 
     // Event listener untuk item skill untuk mengganti slide manual
@@ -49,6 +61,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Mulai slideshow
+    // Memulai slideshow
     scrollImage();
 });
