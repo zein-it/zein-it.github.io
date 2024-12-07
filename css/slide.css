@@ -37,7 +37,7 @@
 }
 
 .slide-container {
-    height: 215px; /* Batasi tinggi agar efek scroll terlihat */
+    height: 255px; /* Batasi tinggi agar efek scroll terlihat */
     overflow: hidden;
     position: relative;
     width: 100%;
