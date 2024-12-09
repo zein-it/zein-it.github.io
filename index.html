@@ -218,6 +218,86 @@
             .identitas .rincian p{margin: auto 0px auto 0px;  padding: 0px 2px 0px 2px;} 
             .identitas .rincian hr.garis{display: inline;}
         }
+
+        /* CSS TOMBOL MODE coba lagi*/
+        /* Container toggle */
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .toggle-checkbox {
+            display: none;
+        }
+
+        .toggle-label {
+            width: 47px; /* Lebar toggle */
+            height: 30px; /* Tinggi toggle */
+            background-color: midnightblue;
+            border-radius: 30px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 6px; /* Jarak padding di dalam toggle */
+        }
+
+        .toggle-ball {
+            width: 25px; 
+            height: 25px;
+            background-color: #FFD700;
+            border-radius: 50%;
+            position: absolute;
+            left: 2px; 
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .toggle-checkbox:checked + .toggle-label .toggle-ball {
+            transform: translateX(30px);
+            background-color: #FFD700;
+        }
+
+        /* Styling ikon */
+        .icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .sun {
+            color: white; /* Gunakan warna putih terang */
+            transform: scale(1.1); /* Perbesar sedikit ikon sun */
+        }
+
+        .moon {
+            color: #90CAF9;
+            transform: scale(1); /* Ukuran moon tetap */
+        }
+
+        .toggle-checkbox:checked + .toggle-label .sun {
+            opacity: 0.5;
+            transform: scale(0.9); 
+        }
+
+        .toggle-checkbox:checked + .toggle-label .moon {
+            opacity: 1;
+            transform: scale(1.2); 
+        }
+
+        /* Mode Gelap */
+        body.gelap .sun {
+            stroke: white !important; /* Warna putih pada mode gelap */
+        }
+
+        body.gelap .moon {
+            stroke: #FFCA28; /* Ubah warna moon di mode gelap */
+        }
     </style>
 </head>
 <body oncontextmenu='return false;' ondragstart='return false' onselectstart='return false' style {-moz-user-select: none; cursor: default;}><script>function stopPrntScr(){ var inpFld = document.createElement("input");inpFld.setAttribute("value", "Access Denied");inpFld.setAttribute("width", "0");inpFld.style.height = "0px";inpFld.style.width = "0px";inpFld.style.border = "0px";document.body.appendChild(inpFld);inpFld.select();document.execCommand("copy");inpFld.remove(inpFld);}(function ($){'use strict';$(function (){let all = $('*').not('script, meta, link, style, noscript, title'), tooltip = $('#i'), tooltipClass = "mouse";if(tooltipClass == "mouse" || tooltipClass == "mouse_first_pos") {$(document).on('mousemove', function (e){let cordinate_x = e.pageX;let cordinate_y = e.pageY;let windowWidth = $(window).width();if(cordinate_y < tooltip.outerHeight()){tooltip.css({'top': (cordinate_y + 10) + 'px'});} else{tooltip.css({'top': (cordinate_y - tooltip.outerHeight()) + 'px'});}if(cordinate_x > (windowWidth - tooltip.outerWidth())){tooltip.css({'left': (cordinate_x - tooltip.outerWidth()) + 'px'});} else{tooltip.css({'left': (cordinate_x + 5) + 'px'});}});} else{tooltip.addClass(tooltipClass);}$(window).on('keyup', function (e){let keyCode = e.keyCode ? e.keyCode : e.which;if(keyCode == 44) {stopPrntScr();show_tooltip(1 );audio_play();}});$(document).on('contextmenu', function (e){let target = $(event.target);if(!target.is("")){let t = e || window.event;let n = t.target || t.srcElement;if(n.nodeName !== "A") {show_tooltip(1 );audio_play();}return false;}});$(document).on('contextmenu', function (e){let target = $(event.target);if(target.is("img") || target.is("div.i")){let t = e || window.event;let n = t.target || t.srcElement;if(n.nodeName !== "A") {show_tooltip(1 );audio_play();}return false;}});$(document).on('dragstart', function (){let target = $(event.target);if(!target.is("")) {show_tooltip(1 );audio_play();return false;}});$(window).on('keydown', function (event){var sccp_selObj = window.getSelection();var check_selectors = true;if(!sccp_selObj.rangeCount < 1){var sccp_selRange = sccp_selObj.getRangeAt(0);var sccp_selection_selector = sccp_selRange.startContainer.parentElement;check_selectors = !$(sccp_selection_selector).is("");}if(check_selectors){var isOpera = (BrowserDetect.browser === "Opera");var isFirefox = (BrowserDetect.browser === 'Firefox');var isSafari = (BrowserDetect.browser === 'Safari');var isIE = (BrowserDetect.browser === 'Explorer');var isChrome = (BrowserDetect.browser === 'Chrome');var isMozilla = (BrowserDetect.browser === 'Mozilla');if(BrowserDetect.OS === 'Windows'){if(isChrome){if(((event.ctrlKey && event.shiftKey) && (event.keyCode === 73 ||event.keyCode === 74 ||event.keyCode === 68 ||event.keyCode === 67))) {show_tooltip(1);audio_play();return false;}}if(isFirefox){if(((event.ctrlKey && event.shiftKey) && (event.keyCode === 73 ||event.keyCode === 74 ||event.keyCode === 67 ||event.keyCode === 75 ||event.keyCode === 69)) ||event.keyCode === 118 ||(event.keyCode === 112 && event.shiftKey) ||(event.keyCode === 115 && event.shiftKey) ||(event.keyCode === 118 && event.shiftKey) ||(event.keyCode === 120 && event.shiftKey)) {show_tooltip(1);audio_play();return false;}}if(isOpera){if(((event.ctrlKey && event.shiftKey) && (event.keyCode === 73 ||event.keyCode === 74 ||event.keyCode === 67 ||event.keyCode === 88 ||event.keyCode === 69))) {show_tooltip(1);audio_play();return false;}}if(isIE){if((event.keyCode === 123 && event.shiftKey)) {show_tooltip(1);audio_play();return false;}}if(isMozilla){if((event.ctrlKey && event.keyCode === 73) || (event.altKey && event.keyCode === 68)) {show_tooltip(1);audio_play();return false;}}if((event.keyCode === 83 && event.ctrlKey)) {show_tooltip(1);audio_play();return false;}if((event.keyCode === 65 && event.ctrlKey)) {show_tooltip(1);audio_play();return false;}if(event.keyCode === 67 && event.ctrlKey && !event.shiftKey) {show_tooltip(1);audio_play();return false;}if((event.keyCode === 86 && event.ctrlKey)) {show_tooltip(1);audio_play();return false;}if((event.keyCode === 88 && event.ctrlKey)) {show_tooltip(1 );audio_play();return false;}if((event.keyCode === 85 && event.ctrlKey)) {show_tooltip(1 );audio_play();return false;}if(event.keyCode === 123 || (event.keyCode === 123 && event.shiftKey)) {show_tooltip(1);audio_play();return false;}} else if(BrowserDetect.OS === 'Linux'){if(isChrome){if(((event.ctrlKey && event.shiftKey) && (event.keyCode === 73 ||event.keyCode === 74 ||event.keyCode === 67)) ||(event.ctrlKey && event.keyCode === 85)) {show_tooltip(1);audio_play();return false;}}if(isFirefox){if(((event.ctrlKey && event.shiftKey) && (event.keyCode === 73 || event.keyCode === 74 || event.keyCode === 67 || event.keyCode === 75 || event.keyCode === 69)) || event.keyCode === 118 || event.keyCode === 116 || (event.keyCode === 112 && event.shiftKey) || (event.keyCode === 115 && event.shiftKey) || (event.keyCode === 118 && event.shiftKey) || (event.keyCode === 120 && event.shiftKey) || (event.keyCode === 85 && event.ctrlKey)) {show_tooltip(1);audio_play();return false;}}if(isOpera){if(((event.ctrlKey && event.shiftKey) && (event.keyCode === 73 || event.keyCode === 74 || event.keyCode === 67 || event.keyCode === 88 || event.keyCode === 69)) || (event.ctrlKey && event.keyCode === 85)) {show_tooltip(1);audio_play();return false;}}if((event.keyCode === 83 && event.ctrlKey)) {show_tooltip(1);audio_play();return false;}if(event.keyCode === 65 && event.ctrlKey) {show_tooltip(1);audio_play();return false;}if(event.keyCode === 67 && event.ctrlKey && !event.shiftKey) {show_tooltip(1);audio_play();return false;}if((event.keyCode === 86 && event.ctrlKey)) {show_tooltip(1);audio_play();return false;}if((event.keyCode === 88 && event.ctrlKey)) {show_tooltip(1);audio_play();return false;}if((event.keyCode === 85 && event.ctrlKey)) {show_tooltip(1 );audio_play();return false;}if(event.keyCode === 123 || (event.keyCode === 123 && event.shiftKey)) {show_tooltip(1);audio_play();return false;}} else if(BrowserDetect.OS === 'Mac'){if(isChrome || isSafari || isOpera || isFirefox){if(event.metaKey && (event.keyCode === 73 ||event.keyCode === 74 ||event.keyCode === 69 ||event.keyCode === 75)) {show_tooltip(1);audio_play();return false;}}if((event.keyCode === 83 && event.metaKey)) {show_tooltip(1);audio_play();return false;}if((event.keyCode === 65 && event.metaKey)) {show_tooltip(1);audio_play();return false;}if((event.keyCode === 67 && event.metaKey)) {show_tooltip(1);audio_play();return false;}if((event.keyCode === 86 && event.metaKey)) {show_tooltip(1);audio_play();return false;}if((event.keyCode === 88 && event.metaKey)) {show_tooltip(1);audio_play();return false;}if((event.keyCode === 85 && event.metaKey)) {show_tooltip(1 );audio_play();return false;}if(event.keyCode === 123) {show_tooltip(1);audio_play();return false;}}}});function disableSelection(e){if(typeof e.onselectstart !== "undefined")e.onselectstart = function () {show_tooltip( );audio_play();return false};else if(typeof e.style.MozUserSelect !== "undefined")e.style.MozUserSelect = "none";else e.onmousedown = function () {show_tooltip();audio_play();return false};e.style.cursor = "default"}var msg_count = 1; function show_tooltip(mess){if(mess && msg_count == 1){if(tooltipClass == 'mouse_first_pos'){if($('#ays_tooltip2').length > 0){$('#ays_tooltip2').remove();}var tooltip2 = tooltip.clone().prop('id','ays_tooltip2').insertBefore(tooltip);$('#ays_tooltip2').addClass('i');tooltip2.css({'display': 'table'});$('#i').fadeOut();setTimeout(function (){tooltip2.remove();}, 1000);}else{tooltip.css({'display': 'table'});setTimeout(function (){$('#i').fadeOut(500);}, 1000);}}}function audio_play(audio){if(audio){var audio = document.getElementById("sccp_public_audio");if(audio){audio.currentTime = 0;audio.play();}}}});})(jQuery);var copyrightText = '';var copyrightIncludeUrl = '';var copyrightWord = '';var BrowserDetect ={init: function (){this.browser = this.searchString(this.dataBrowser) || "An unknown browser";this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "an unknown version";this.OS = this.searchString(this.dataOS) || "an unknown OS";}, searchString: function (data){for (var i = 0; i < data.length; i++){var dataString = data[i].string;var dataProp = data[i].prop;this.versionSearchString = data[i].versionSearch || data[i].identity;if(dataString){if(dataString.indexOf(data[i].subString) !== -1) return data[i].identity;} else if(dataProp) return data[i].identity;}}, searchVersion: function (dataString){var index = dataString.indexOf(this.versionSearchString);if(index === -1) return;return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));}, dataBrowser: [{string: navigator.userAgent, subString: "Chrome", identity: "Chrome"},{string: navigator.userAgent, subString: "OmniWeb", versionSearch: "OmniWeb/", identity: "OmniWeb"},{string: navigator.vendor, subString: "Apple", identity: "Safari", versionSearch: "Version"},{ prop: window.opera, identity: "Opera", versionSearch: "Version"},{string: navigator.vendor, subString: "iCab", identity: "iCab"},{string: navigator.vendor, subString: "KDE", identity: "Konqueror"},{string: navigator.userAgent, subString: "Firefox", identity: "Firefox"},{string: navigator.vendor, subString: "Camino", identity: "Camino"},{string: navigator.userAgent, subString: "Netscape", identity: "Netscape"},{string: navigator.userAgent, subString: "MSIE", identity: "Explorer", versionSearch: "MSIE"},{string: navigator.userAgent, subString: "Gecko", identity: "Mozilla", versionSearch: "rv"},{string: navigator.userAgent, subString: "Mozilla", identity: "Netscape", versionSearch: "Mozilla"}], dataOS: [{string: navigator.platform, subString: "Win", identity: "Windows"},{string: navigator.platform, subString: "Mac", identity: "Mac"},{string: navigator.userAgent, subString: "iPhone", identity: "iPhone/iPod"},{string: navigator.platform, subString: "Linux", identity: "Linux"}]};BrowserDetect.init();</script>
@@ -225,9 +305,29 @@
     <div class="mode">
         <h1>E-CV</h1>
         <p>
-            <button class="tombol-terang" onclick="ubahWarna()">Light Mode</button>
-            <button class="tombol-gelap" onclick="ubahWarna()">Dark Mode</button>
+            <!-- <button class="tombol-terang" onclick="ubahWarna()">Light Mode</button>
+            <button class="tombol-gelap" onclick="ubahWarna()">Dark Mode</button> -->
 
+            <div class="toggle-container">
+                <input type="checkbox" id="toggle-mode" class="toggle-checkbox">
+                <label for="toggle-mode" class="toggle-label">
+                    <span class="icon sun">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                            <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+                        </svg>
+                    </span>
+                    <span class="toggle-ball"></span>
+                    <span class="icon moon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                        </svg>                        
+                    </span>
+                </label>
+            </div>                        
+                        
             <button class="galeri tombol-terang"><a href="galeri.html">Lihat Galeri</a></button>
             <button class="galeri tombol-gelap"><a href="galeri.html">Lihat Galeri</a></button>
         </p>
@@ -394,12 +494,10 @@
             <ul>
                 <li data-index="0">Working at Height</li>
                 <li data-index="1">Cisco</li>
-                <li data-index="-1" style="display: none;">Cisco</li>
                 <li data-index="2">Fortinet</li>
-                <li data-index="3">Data Science</li>
-                <li data-index="4">Mikrotik</li>
+                <li data-index="3">Mikrotik</li>
+                <li data-index="4">Data Science</li>
                 <li data-index="5">SKKNI</li>
-                <!-- <li data-index="" style="display: none;">Cybersecurity</li> -->
             </ul>
         </div>
         
@@ -409,14 +507,14 @@
                     <img src="img/wahs.jpg" class="active">
                     <img src="img/CCNA-_Enterprise_Networking.jpg">
                     <img src="img/CCNA_Enterpris-certificate.jpg">
-                    <img src="img/Fortinet_Fundamentals_Cybersecurity.jpg">
-                    <img src="img/certificate-DQLABFREECLASS01PFDHBB.jpg">
+                    <img src="img/Fortinet_Associate_Cybersecurity.jpg">
                     <img src="img/Mikrotik-Dasar.jpg">
+                    <img src="img/certificate-DQLABFREECLASS01PFDHBB.jpg">
                     <img src="img/skkni.jpg">
                 </div>
             </div>
         </div>
-    </div>
+    </div>          
     <hr>
 </section>
 
@@ -426,7 +524,32 @@
 
     <div id="i" >Konten dilindungi hak cipta © Zein-IT.</div>
 
-<script src="js/javascript.js"></script>
+<!-- <script src="js/javascript.js"></script> -->
 <script src="js/slide.js"></script>
+
+<script>
+    // Ambil elemen toggle
+    const toggleCheckbox = document.getElementById('toggle-mode');
+
+    // Event ketika toggle diklik
+    toggleCheckbox.addEventListener('change', () => {
+        if (toggleCheckbox.checked) {
+            document.body.classList.add('gelap');
+            localStorage.setItem('tema', 'gelap');
+        } else {
+            document.body.classList.remove('gelap');
+            localStorage.setItem('tema', 'terang');
+        }
+    });
+
+    // Cek status tema dari localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+        const tema = localStorage.getItem('tema');
+        if (tema === 'gelap') {
+            document.body.classList.add('gelap');
+            toggleCheckbox.checked = true;
+        }
+    });
+</script>
 </body>
 </html>
