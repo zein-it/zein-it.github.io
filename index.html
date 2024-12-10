@@ -242,15 +242,20 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 6px; /* Jarak padding di dalam toggle */
+            gap: 10px; /* Jarak tambahan antara ikon sun dan moon */
+        }
+
+        .gelap .toggle-label {
+            background-color: darkorange;
         }
 
         .toggle-ball {
-            width: 25px; 
-            height: 25px;
+            width: 30px; 
+            height: 30px;
             background-color: #FFD700;
             border-radius: 50%;
             position: absolute;
-            left: 2px; 
+            left: 0px; 
             transition: all 0.3s ease;
             z-index: 2;
         }
@@ -258,6 +263,10 @@
         .toggle-checkbox:checked + .toggle-label .toggle-ball {
             transform: translateX(30px);
             background-color: #FFD700;
+        }
+
+        .gelap .toggle-checkbox:checked + .toggle-label .toggle-ball {
+            background-color: RoyalBlue;
         }
 
         /* Styling ikon */
@@ -272,22 +281,24 @@
 
         .sun {
             color: white; /* Gunakan warna putih terang */
-            transform: scale(1.1); /* Perbesar sedikit ikon sun */
+            transform: scale(1); 
+            /* Perbesar sedikit ikon sun */
         }
 
         .moon {
-            color: #90CAF9;
-            transform: scale(1); /* Ukuran moon tetap */
+            color: white;
+            transform: scale(1.2); 
+            /* Ukuran moon tetap */
         }
 
         .toggle-checkbox:checked + .toggle-label .sun {
-            opacity: 0.5;
-            transform: scale(0.9); 
+            opacity: 1; /* Pertahankan kecerahan ikon sun */
+            transform: scale(1.3); 
         }
 
         .toggle-checkbox:checked + .toggle-label .moon {
             opacity: 1;
-            transform: scale(1.2); 
+            transform: scale(0.9); 
         }
 
         /* Mode Gelap */
@@ -312,11 +323,11 @@
                 <input type="checkbox" id="toggle-mode" class="toggle-checkbox">
                 <label for="toggle-mode" class="toggle-label">
                     <span class="icon sun">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
-                            <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
-                        </svg>
+                            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" fill="white" />
+                            <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" stroke="white" />
+                        </svg>                                                                    
                     </span>
                     <span class="toggle-ball"></span>
                     <span class="icon moon">
@@ -330,6 +341,9 @@
                         
             <button class="galeri tombol-terang"><a href="galeri.html">Lihat Galeri</a></button>
             <button class="galeri tombol-gelap"><a href="galeri.html">Lihat Galeri</a></button>
+            <br><br><br>
+            <button class="galeri tombol-terang"><a href="dokumen.html">Sertifikat</a></button>
+            <button class="galeri tombol-gelap"><a href="dokumen.html">Sertifikat</a></button>
         </p>
     </div>
 </header>
