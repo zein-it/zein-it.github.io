@@ -179,3 +179,11 @@ RewriteCond %{HTTP_USER_AGENT} ^Zeus.*Webster [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Zeus
 RewriteRule ^.* – [F,L]
 
+# Blokir HTTrack dan beberapa Web Copier lainnya
+SetEnvIfNoCase User-Agent "HTTrack" bad_bot
+SetEnvIfNoCase User-Agent "WebCopier" bad_bot
+SetEnvIfNoCase User-Agent "TeleportPro" bad_bot
+SetEnvIfNoCase User-Agent "Website eXtractor" bad_bot
+SetEnvIfNoCase User-Agent "Offline Explorer" bad_bot
+SetEnvIfNoCase User-Agent "SiteSucker" bad_bot
+Deny from env=bad_bot

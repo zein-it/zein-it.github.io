@@ -1,47 +1,244 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="id-ID">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peringatan!</title>
+
+    <style>
+        .hanyo {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 50vh; /* Tinggi elemen 50% dari tinggi viewport */
+            width: 50vw;  /* Lebar elemen 50% dari lebar viewport */
+            justify-content: center;
+            position: absolute; /* diangkat dari aliran dokumen normal dan diposisikan secara absolut berdasarkan nilai top dan left */
+            top: 50%; /* menempatkan tepi atas elemen di tengah viewport. */
+            left: 50%; /* menempatkan tepi kiri elemen di tengah viewport. */
+            transform: translate(-50%, -50%); /* menggeser elemen sejauh 50% ke kiri dan atas dari posisi awalnya. Hal ini membuat titik tengah elemen bertepatan dengan titik tengah viewport. */
+            text-align: center; /* memastikan semua teks di dalam div rata tengah. */
+        }
+        p {
+            font-size: medium;
+        }
+    </style>
+    
 </head>
 <body>
-    <h1>Alat Pengembang Terdeteksi!</h1>
-    <p>Konten dilindungi hak cipta © Zein-IT.</p>
-    <p>Halaman profil ini tidak dapat dilihat jika alat pengembang diaktifkan.</p>
-    <p>
-        <a href="https://zein-it.github.io">Kembali ke halaman profil saya</a>
-    </p>
-
-<!--
-cara tambah file/folder :
-ls
-git status
-git add *
-git status
-git commit -m "koment"
-git branch -M main
-git push -u origin main
-
-cara lain :
-git init
-ls
-git add *
-git status
-git commit -m "gk bisa"
-git branch -M master
-git remote add origin https://github.com/zein-it/zein-it.github.io.git
-git push -u origin master
+    <div class="hanyo">
+        <h1>Alat Pengembang Terdeteksi!</h1>
+        <p style="color: red;">Konten dilindungi hak cipta © Zein-IT.</p>
+        <p>Halaman profil tidak dapat dilihat jika alat pengembang diaktifkan.</p>
+        <div id="countdown-display">9</div>
+        <p style="color: darkblue;">
+            <a href="https://zein-it.github.io/">Kembali ke halaman profil saya</a>
+        </p>
+    </div>
 
 
-git push -f origin master
-git pull --rebase
-git pull origin trunk:master
 
-git add
-git push
+<script>
+    function countdown(element, seconds, redirectUrl) {
+        // Mengambil elemen HTML yang akan ditampilkan countdown
+        const counter = document.getElementById(element);
 
--->
+        // Fungsi untuk memperbarui tampilan countdown
+        function updateCounter() {
+            seconds--;
+            counter.textContent = seconds;
+
+            // Jika waktu habis, alihkan halaman
+            if (seconds <= 0) {
+                window.location.href = redirectUrl;
+            }
+        }
+
+        // Jalankan fungsi updateCounter setiap detik
+        const intervalId = setInterval(updateCounter, 1000);
+    }
+
+    // Contoh penggunaan:
+    countdown('countdown-display', 9, 'https://zein-it.github.io/'); // Ganti dengan ID elemen dan URL yang diinginkan
+</script>
+
+<div>
+    <!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    cara tambah file/folder :
+    ls
+    git status
+    git add *
+    git status
+    git commit -m "koment"
+    git branch -M main
+    git push -u origin main
+
+    cara lain :
+    git init
+    ls
+    git add *
+    git status
+    git commit -m "gk bisa"
+    git branch -M master
+    git remote add origin https://github.com/zein-it/zein-it.github.io.git
+    git push -u origin master
+
+
+    git push -f origin master
+    git pull --rebase
+    git pull origin trunk:master
+
+    git add
+    git push
+
+    -->
+</div>
 
 </body>
 </html>
