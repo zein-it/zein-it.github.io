@@ -6,13 +6,13 @@ body {-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select
 
 header .mode {margin: auto; display: contents; border-radius: 5px;  text-align: center; transition: background-color 1.0s ease;}
 
-header .mode button {padding: 10px;  cursor: pointer; border: none; border-radius: 5px;  font-weight: bold; margin-top: 0px;  margin-bottom: 30px;}
+header .mode .galeri-container {padding: 10px;  cursor: pointer; border: none; border-radius: 5px;  font-weight: bold; margin-top: 0px;  margin-bottom: 30px;}
 
-header .mode button.tombol-terang {display: none; color: white; background-color: darkorange; transition: background-color 1.0s ease;}
+header .mode .galeri-container .tombol-terang {display: none; color: white; background-color: darkorange; transition: background-color 1.0s ease;}
 
 div.nama span.tombol-terang, div.kontak img.tombol-terang {display: none;}
 
-header .mode button.tombol-gelap {color: white; background-color: midnightblue; transition: background-color 1.0s ease;}
+header .mode .galeri-container .tombol-gelap {color: white; background-color: midnightblue; transition: background-color 1.0s ease;}
 
 body.gelap {background-color: #000; transition: background-color 1.0s ease;} 
 
@@ -99,13 +99,13 @@ div.tmp-pengalaman a img:hover, #keahlian a img:hover, #keahlian_sertifikat a im
 .andalan {border-radius: 15px;  display: flex;  flex-direction: row; justify-content: space-between; margin-top: 10px;} 
 .andalan_surat {border-radius: 15px;  display: flex;  flex-direction: row; justify-content: space-between; margin-top: 10px;}
 
-.andalan .gambar {background: url("img/gambar2.jpg"); background-attachment: fixed; width: 50%; background-position: center; background-size: cover; margin-top: 20px; margin-bottom: 20px;} 
+.andalan .gambar {background: url("../img/gambar2.jpg"); background-attachment: fixed; width: 50%; background-position: center; background-size: cover; margin-top: 20px; margin-bottom: 20px;} 
 
 /* .andalan_surat .gambar_sertifikat {background: url("img/wahs.jpg"); background-attachment: fixed; width: 70%; background-position: center; background-size: cover; margin-top: 10px; margin-bottom: 10px;}  */
 
 /* .andalan_surat .gambar_sertifikat {background-attachment: fixed; width: 50%; background-position: center; background-size: cover; margin-top: 20px; margin-bottom: 20px;} */
 
-.gelap .andalan .gambar { background: url("img/gambar1.jpg"); background-attachment: fixed; width: 50%; background-position: center; background-size: cover; margin-top: 20px; margin-bottom: 20px;} 
+.gelap .andalan .gambar {background: url("../img/gambar1.jpg"); background-attachment: fixed; width: 50%; background-position: center; background-size: cover; margin-top: 20px; margin-bottom: 20px;} 
 
 .identitas .nama {text-align: left; border-radius: 0px 0px 0px 0px;  width: 20%;} 
 
@@ -157,32 +157,106 @@ footer .hak-cipta {margin-top: 15px;  padding: 5px;  border-top: 2px solid #b71c
 
 .tombol-nav {transition: background-color 1.0s ease; transition: color 0.5s ease;}
 
-/* lihat galeri */
-div.mode button.galeri {
-    float: right;
-    right: 25ch; 
+/* Tombol Lihat Galeri & Sertifikat */
+/* 1. Penataan posisi tombol di kanan atas secara vertikal */
+.galeri-container {
     position: fixed;
-    z-index: 99;
+    top: 20px; 
+    right: 20px; 
+    display: flex;
+    flex-direction: column; /* Buat tombol berjejer vertikal */
+    gap: 10px; /* Jarak antar tombol */
+    z-index: 99; 
 }
 
-div.mode button.galeri a {
+/* 2. Gaya umum tombol */
+.galeri-container a.galeri {
+    display: inline-block;
+    position: relative;
+    padding: 9px 13px; 
+    font-size: 16px;
+    font-weight: bold;
     color: white;
-    text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px; 
+    overflow: hidden; 
+    cursor: pointer;
+    width: fit-content; 
+    text-decoration: none; 
+    text-align: center;
+    transition: all 0.3s ease;
 }
-/* lihat galeri */
-        
+
+.galeri-container a.galeri span {
+    position: relative;
+    z-index: 2; 
+}
+
+/* .galeri-container a.galeri:hover {
+    background-color: #0056b3;
+    background-color: darkorange;
+} */
+
+.galeri-container a.tombol-terang:hover {
+    background-color: midnightblue;
+}
+
+.galeri-container a.tombol-gelap:hover {
+    background-color: rgb(228, 126, 2);
+}
+
+.galeri-container a.galeri svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: 1; 
+    transition: all 0.3s ease;
+}
+
+.galeri-container a.galeri svg path {
+    fill: transparent; /* Path tidak terlihat awalnya */
+    transition: fill 0.3s ease;
+}
+
+.galeri-container a.galeri:hover svg path {
+    fill: rgba(255, 255, 255, 0.158); /* Warna saat hover */
+}
+
+/* .galeri-container .tombol-terang {
+    background-color: #ff9800;
+} */
+
+/* .galeri-container .tombol-terang:hover {
+    background-color: #e68900;
+} */
+
+/* .galeri-container .tombol-gelap {
+    background-color: #333;
+} */
+
+/* .galeri-container .tombol-gelap:hover {
+    background-color: #555;
+} */
+
 @media screen and (max-width: 1024px) {
-    div.mode button.galeri {
-        right: 0%; 
-    }    
+    .galeri-container {
+        top: 10px; 
+        right: 10px; 
+    }
+
+    .galeri-container a .galeri {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 }
 
 @media screen and (min-width: 1025px) {
-    div.mode button.galeri {
-        right: 10%; 
-    }    
+    .galeri-container a .galeri {
+        font-size: 16px;
+    }
 }
+/* Tombol Lihat Galeri & Sertifikat */
 
 @media screen and (max-width: 800px) {
     .tentang-saya, .ringkasan,  #keahlian, #keahlian_sertifikat, .tmp-pengalaman, .tmp-pddkn{width: 75%;} 

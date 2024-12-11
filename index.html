@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/slide.css">
     <script src="js/devtools.js"></script>
-    <script src="js/copyright.js"></script>
     <script src='js/jquery-3.6.0.js?ver=3.6.0' id='jquery-core-js'></script>
 </head>
 <body oncontextmenu='return false;' ondragstart='return false' onselectstart='return false' style {-moz-user-select: none; cursor: default;}>
@@ -17,9 +16,6 @@
     <div class="mode">
         <h1>E-CV</h1>
         <p>
-            <!-- <button class="tombol-terang" onclick="ubahWarna()">Light Mode</button>
-            <button class="tombol-gelap" onclick="ubahWarna()">Dark Mode</button> -->
-
             <div class="toggle-container">
                 <input type="checkbox" id="toggle-mode" class="toggle-checkbox">
                 <label for="toggle-mode" class="toggle-label">
@@ -38,13 +34,39 @@
                         </svg>                        
                     </span>
                 </label>
-            </div>                        
-                        
-            <button class="galeri tombol-terang"><a href="galeri.html">Lihat Galeri</a></button>
-            <button class="galeri tombol-gelap"><a href="galeri.html">Lihat Galeri</a></button>
-            <br><br><br>
-            <button class="galeri tombol-terang"><a href="dokumen.html">Sertifikat</a></button>
-            <button class="galeri tombol-gelap"><a href="dokumen.html">Sertifikat</a></button>
+            </div>
+            
+            <div class="galeri-container">
+
+                <a href="galeri.html" class="galeri tombol-terang">
+                    <span>Lihat Galeri</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 44" preserveAspectRatio="none">
+                        <path d="M0,22C10,30,30,30,50,22S90,10,120,22s30,22,40,22H0Z"></path>
+                    </svg>
+                </a>
+            
+                <a href="galeri.html" class="galeri tombol-gelap">
+                    <span>Lihat Galeri</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 44" preserveAspectRatio="none">
+                        <path d="M0,22C10,30,30,30,50,22S90,10,120,22s30,22,40,22H0Z"></path>
+                    </svg>
+                </a>
+            
+                <a href="dokumen.html" class="galeri tombol-terang">
+                    <span>Sertifikat</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 44" preserveAspectRatio="none">
+                        <path d="M0,22C10,30,30,30,50,22S90,10,120,22s30,22,40,22H0Z"></path>
+                    </svg>
+                </a>
+            
+                <a href="dokumen.html" class="galeri tombol-gelap">
+                    <span>Sertifikat</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 44" preserveAspectRatio="none">
+                        <path d="M0,22C10,30,30,30,50,22S90,10,120,22s30,22,40,22H0Z"></path>
+                    </svg>
+                </a>
+
+            </div>
         </p>
     </div>
 </header>
