@@ -1,0 +1,505 @@
+#i,.i{display: none;position: absolute;z-index: 98;background-color: #ffffff;background-repeat: no-repeat;background-position: center center;background-size: cover;opacity:1;border: 1px solid #b7b7b7;border-radius: 3px;box-shadow: rgba(0,0,0,0) 0px 0px 15px1px;color: #ff0000;padding: 5px;font-size: 12px;text-transform: none;}#i > *, .i > *{color: #ff0000;font-size: 12px;}*:not(input):not(textarea)::selection{background-color: transparent !important;color: inherit !important;}*:not(input):not(textarea)::-moz-selection{background-color: transparent !important;color: inherit !important;}
+
+*{-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; box-sizing: border-box; transition: background-color 1.0s ease; font-family: 'Calibri';}
+
+html {scroll-behavior: smooth;}
+
+body {-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; margin: 0; background-color: #dddddd; transition: background-color 1.0s ease;}
+
+header .mode {margin: auto; display: contents; border-radius: 5px;  text-align: center; transition: background-color 1.0s ease;}
+
+header .mode .galeri-container {padding: 10px;  cursor: pointer; border: none; border-radius: 5px;  font-weight: bold; margin-top: 0px;  margin-bottom: 30px;}
+
+header .mode .galeri-container .tombol-terang {display: none; color: white; background-color: darkorange; transition: background-color 1.0s ease;}
+
+div.nama span.tombol-terang, div.kontak img.tombol-terang {display: none;}
+
+header .mode .galeri-container .tombol-gelap {color: white; background-color: midnightblue; transition: background-color 1.0s ease;}
+
+body.gelap {background-color: #000; transition: background-color 1.0s ease;} 
+
+.gelap header .mode {background-color: #333; color: #fff; transition: background-color 1.0s ease;} 
+
+.gelap .tentang-saya, .gelap .ringkasan, .gelap #keahlian, .gelap .tmp-pengalaman, .gelap #keahlian_sertifikat, .gelap .tmp-pddkn {background-color: #333; color: #fff; box-shadow: 0px 0px 7px 2px tan; transition: background-color 1.0s ease; transition: color 0.5s ease;} 
+
+.gelap .identitas .rincian {background-color: darkslategray; color: #fff; transition: background-color 1.0s ease; transition: color 0.5s ease;} 
+
+.gelap .identitas .kontak {background-color: teal; color: #fff; transition: background-color 1.0s ease; transition: color 0.5s ease;} 
+
+.gelap .kontak p a {color: #fff; transition: background-color 1.0s ease; transition: color 0.5s ease;} 
+
+.gelap .pengalaman .pt {background-color: teal; color: #fff; transition: background-color 1.0s ease; transition: color 0.5s ease;} 
+
+.gelap .pengalaman .jobdesk {background-color: midnightblue; color: #fff; transition: background-color 1.0s ease; transition: color 0.5s ease;} 
+
+.gelap .pddkn .sklh {background-color: darkslateblue; color: #fff; transition: background-color 1.0s ease; transition: color 0.5s ease;} 
+
+.gelap .pddkn .jenjang {background-color: dimgrey; color: #fff; transition: background-color 1.0s ease; transition: color 0.5s ease;} 
+
+.gelap header .mode .tombol-terang {display: inline;} 
+
+.gelap div.nama .tombol-terang, .gelap div.kontak .tombol-terang {display: inline;} 
+
+.gelap header .mode .tombol-gelap {display: none;} 
+
+.gelap div.nama .tombol-gelap, .gelap div.kontak .tombol-gelap {display: none;}
+
+div.tmp-pddkn a img {float: right; top: 0; padding-top: 0px;  margin-top: 0px;  padding-right: 0px;  margin-right: 0px;  max-width: 26px;}
+
+div.tmp-pddkn a img:hover {transition: all 0.2s ease-in-out; transform: scale(1.4); transform-style: preserve-3d; box-shadow: 3px 3px 4px mediumvioletred;} 
+
+.gelap div.tmp-pddkn a img:hover {box-shadow: 3px 3px 4px tan;} 
+
+.gelap #keahlian a img:hover {box-shadow: 3px -3px 4px tan;} 
+
+.gelap #keahlian_sertifikat a img:hover {box-shadow: 3px -3px 4px tan;} 
+
+.gelap div.tmp-pengalaman a img:hover {box-shadow: -3px 3px 4px tan;}
+
+div.tmp-pddkn a.tombol-terang img, div.tmp-pengalaman a.tombol-terang img, #keahlian a.tombol-terang img, #keahlian_sertifikat a.tombol-terang img {display: inline;} 
+
+.gelap div.tmp-pddkn a.tombol-terang img, .gelap div.tmp-pengalaman a.tombol-terang img, .gelap #keahlian a.tombol-terang img, .gelap #keahlian_sertifikat a.tombol-terang img {display: none;}
+
+div.tmp-pddkn a.tombol-gelap img, div.tmp-pengalaman a.tombol-gelap img, #keahlian a.tombol-gelap img, #keahlian_sertifikat a.tombol-gelap img {display: none;} 
+
+.gelap div.tmp-pddkn a.tombol-gelap img, .gelap div.tmp-pengalaman a.tombol-gelap img, .gelap #keahlian a.tombol-gelap img, .gelap #keahlian_sertifikat a.tombol-gelap img {display: inline;}
+
+div.tmp-pengalaman a img, #keahlian a img, #keahlian_sertifikat a img {float: right; top: 0; padding-top: 0px;  margin-top: 0px;  padding-right: 0px;  margin-right: 0px;  max-width: 36px;}
+
+#keahlian a img, #keahlian_sertifikat a img {max-height: 30px;}
+
+div.tmp-pengalaman a img:hover, #keahlian a img:hover, #keahlian_sertifikat a img:hover {transition: all 0.2s ease-in-out; transform: scale(1.4); transform-style: preserve-3d; box-shadow: -3px 3px 4px mediumvioletred;}
+
+#keahlian a img:hover, #keahlian_sertifikat a img:hover {box-shadow: 3px -3px 4px mediumvioletred; transform-style: preserve-3d;} 
+
+.tentang-saya, .ringkasan, #keahlian, #keahlian_sertifikat, .tmp-pengalaman, .tmp-pddkn {padding: 1px 30px 10px 30px;  box-shadow: 0px 0px 7px 2px mediumvioletred; border-radius: 15px;  background-color: #999; width: min(92%, 750px);  margin: auto; margin-top: 20px;  transition: background-color 1.0s ease;} 
+
+.ringkasan {text-align: justify;} 
+
+.nama img {width: 120px;  border: none;} 
+
+.kontak p a {color: black; text-decoration: none; overflow-wrap: anywhere; transition: color 0.5s ease;} 
+
+.tombol-terang:hover {transform: scale(1.1);}
+.tombol-gelap:hover {transform: scale(1.1);}
+
+.kontak p a:hover {text-shadow: -2px 2px 2px #fff;}
+/* .kontak p .tombol-terang:hover {box-shadow: -3px 3px 4px white; transform-style: preserve-3d;}  */
+
+.gelap .kontak p a:hover {text-shadow: -2px 2px 2px red;} 
+/* .gelap .kontak p .tombol-gelap:hover {box-shadow: -3px 3px 4px red; transform-style: preserve-3d;}  */
+
+.andalan ul {padding-left: 15px;}
+.andalan_surat ul {padding-left: 15px;}
+
+.nama1 {font-weight: bold; font-size: 19px;} 
+
+.pengalaman .pt a.nama1[href] {color: inherit; text-decoration: none; cursor: pointer; display: inline-block; transition: color 0.4s ease, text-shadow 0.4s ease, transform 0.4s ease;} 
+
+.pengalaman .pt a.nama1[href]:hover {text-shadow: -2px 2px 2px #fff; transform: scale(1.05);} 
+
+.gelap .pengalaman .pt a.nama1[href]:hover {text-shadow: -2px 2px 2px red;} 
+
+
+.pengalaman .pt a.nama2[href] {
+    color: inherit; 
+    text-decoration: none; 
+    cursor: pointer; 
+    display: inline-block; 
+    transition: color 0.4s ease, text-shadow 0.4s ease, transform 0.4s ease;
+} 
+
+.pengalaman .pt a.nama2[href]:hover {
+    text-shadow: -2px 2px 2px #fff; 
+    transform: scale(1.05);
+} 
+
+.gelap .pengalaman .pt a.nama2[href]:hover {
+    text-shadow: -2px 2px 2px red;
+} 
+
+
+.nama2 {font-weight: bold; font-size: 16px;} 
+
+.identitas, .pengalaman, .pddkn {border-radius: 15px;  display: flex;  flex-direction: row; justify-content: space-between; margin-top: 10px;} 
+
+.andalan {border-radius: 15px;  display: flex;  flex-direction: row; justify-content: space-between; margin-top: 10px;} 
+.andalan_surat {border-radius: 15px;  display: flex;  flex-direction: row; justify-content: space-between; margin-top: 10px;}
+
+.andalan .gambar {background: url("../img/gambar2.jpg"); background-attachment: fixed; width: 50%; background-position: center; background-size: cover; margin-top: 20px; margin-bottom: 20px;} 
+
+.gelap .andalan .gambar {background: url("../img/gambar1.jpg"); background-attachment: fixed; width: 50%; background-position: center; background-size: cover; margin-top: 20px; margin-bottom: 20px;} 
+
+.identitas .nama {text-align: left; border-radius: 0px 0px 0px 0px;  width: 20%;} 
+
+.identitas .kontak {text-align: left; font-weight: bold; display: grid; background-color: darkseagreen; width: 50%; border-radius: 0px 0px 0px 0px;  padding-left: 25px;  transition: background-color 1.0s ease;} 
+
+.identitas .kontak p {margin: auto 0px auto 0px;} 
+
+.identitas .rincian {text-align: left; display: grid; background-color: cadetblue; width: 25%; border-radius: 0px 15px 15px 0px;  padding-left: 25px;  transition: background-color 1.0s ease;} 
+
+.identitas .rincian p {margin: auto 0px auto 0px;  padding: 0px 2px 0px 2px;} 
+
+.identitas .rincian hr.garis {display: none;} 
+
+.andalan .keahlian {text-align: left; width: 50%;}
+.andalan_surat .keahlian_sertifikat {text-align: left; width: 30%;} 
+
+.pengalaman .pt {text-align: center; background-color: lightslategrey; width: 30%; border-radius: 15px 0px 0px 15px;  transition: background-color 1.0s ease;} 
+
+.tmp-pengalaman .pengalaman .pt {
+    display: grid;
+    place-items: center;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.tmp-pddkn .pddkn .jenjang {
+    /* 2. Metode CSS Grid */
+    display: grid;
+    place-items: center;
+
+    /* 1. Metode Flexbox (Paling Direkomendasikan) */
+    /* display: flex; */
+    justify-content: center; /* Mengatur ke tengah secara horizontal */
+    align-items: center;    /* Mengatur ke tengah secara vertikal */
+    /* height: 0vh;          Tinggi kontainer (contoh: 100% layar) */
+}
+
+.pengalaman .jobdesk {text-align: left; background-color: darkseagreen; width: 70%; border-radius: 0px 15px 15px 0px;  transition: background-color 1.0s ease;} 
+
+.pddkn .jenjang {text-align: center; background-color: lightslategray; width: 30%; border-radius: 15px 0px 0px 15px;  transition: background-color 1.0s ease;} 
+
+.pddkn .sklh {text-align: left; background-color: darkseagreen; width: 70%; border-radius: 0px 15px 15px 0px;  padding-left: 50px;  padding-right: 20px;  transition: background-color 1.0s ease;} 
+
+.pengalaman .jobdesk ul, .andalan .keahlian ul {text-align: left; padding-right: 20px;}
+.andalan_surat .keahlian_sertifikat ul {text-align: left; padding-right: 20px;} 
+
+.pddkn .sklh {padding-right: 20px;} 
+
+.ringkasan:hover, #keahlian:hover,/* #keahlian_sertifikat:hover,*/ .tmp-pengalaman:hover {transition: all 0.2s ease-in-out; transform: scale(1.05); box-shadow: 0px 0px 10px 5px mediumvioletred;}
+
+.gelap .ringkasan:hover, .gelap #keahlian:hover,/* .gelap #keahlian_sertifikat:hover,*/ .gelap .tmp-pengalaman:hover {transition: all 0.2s ease-in-out; transform: scale(1.05); box-shadow: 0px 0px 10px 5px tan;} 
+
+.tentang-saya:hover, .ringkasan:hover, #keahlian:hover, #keahlian_sertifikat:hover, .tmp-pengalaman:hover, .tmp-pddkn:hover {box-shadow: 0px 0px 10px 5px mediumvioletred;} 
+
+.gelap .tentang-saya:hover, .gelap .ringkasan:hover, .gelap #keahlian:hover, .gelap #keahlian_sertifikat:hover, .gelap .tmp-pengalaman:hover, .gelap .tmp-pddkn:hover {box-shadow: 0px 0px 10px 5px tan;}
+
+header h1 {font-style: italic; text-align: center; text-shadow: -2px 2px 2px yellow; transition: background-color 1.0s ease;} 
+
+.gelap header h1 {color: #fff; text-shadow: -2px 2px 2px blue; transition: background-color 1.0s ease;} 
+
+footer .hak-cipta {margin-top: 15px;  padding: 5px;  border-top: 2px solid #b71c1c; text-align: center; color: #ffffff; background-color: #333; transition: background-color 1.0s ease; transition: color 0.5s ease;} 
+
+.gelap footer .hak-cipta {margin-top: 15px;  padding: 5px;  border-top: 2px solid #333; text-align: center; color: #ffffff; background-color: #b71c1c; transition: background-color 1.0s ease; transition: color 0.5s ease;} 
+
+.nama a img:hover {transition: all 0.3s ease-in-out; transform: scale(2);} 
+
+.tombol-nav {transition: background-color 1.0s ease; transition: color 0.5s ease;}
+
+/* Tombol Lihat Galeri & Sertifikat */
+/* 1. Penataan posisi tombol di kanan atas secara vertikal */
+.galeri-container {
+    position: fixed;
+    top: 20px; 
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* Buat tombol berjejer vertikal */
+    gap: 10px; /* Jarak antar tombol */
+    z-index: 50;
+    align-items: flex-end;
+}
+
+/* 2. Gaya umum tombol */
+.galeri-container a.galeri {
+    display: inline-block;
+    position: relative;
+    padding: 8px 11px; 
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px; 
+    overflow: hidden; 
+    cursor: pointer;
+    width: fit-content; 
+    text-decoration: none; 
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.galeri-container a.galeri span {
+    position: relative;
+    z-index: 20;
+    letter-spacing: 1px;
+}
+
+/* .galeri-container a.galeri:hover {
+    background-color: #0056b3;
+    background-color: darkorange;
+} */
+
+.galeri-container a.tombol-terang:hover {
+    background-color: midnightblue;
+}
+
+.galeri-container a.tombol-gelap:hover {
+    background-color: rgb(228, 126, 2);
+}
+
+.galeri-container a.galeri svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: 10; 
+    transition: all 0.3s ease;
+}
+
+.galeri-container a.galeri svg path {
+    fill: transparent; /* Path tidak terlihat awalnya */
+    transition: fill 0.3s ease;
+}
+
+.galeri-container a.galeri:hover svg path {
+    fill: rgba(255, 255, 255, 0.158); /* Warna saat hover */
+}
+
+/* .galeri-container .tombol-terang {
+    background-color: #ff9800;
+} */
+
+/* .galeri-container .tombol-terang:hover {
+    background-color: #e68900;
+} */
+
+/* .galeri-container .tombol-gelap {
+    background-color: #333;
+} */
+
+/* .galeri-container .tombol-gelap:hover {
+    background-color: #555;
+} */
+
+@media screen and (max-width: 1024px) {
+    .galeri-container {
+        top: 10px; 
+        right: 10px;
+    }
+
+    .galeri-container a.galeri {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .galeri-container a.galeri {
+        font-size: 16px;
+    }
+}
+/* Tombol Lihat Galeri & Sertifikat */
+
+@media screen and (max-width: 800px) {
+    .tentang-saya, .ringkasan,  #keahlian, #keahlian_sertifikat, .tmp-pengalaman, .tmp-pddkn{width: 94%; padding: 1px 18px 10px 18px;} 
+    .identitas, .andalan, .andalan_surat, .pengalaman{display: block;} 
+    .tentang-saya .identitas div{width: 100%; text-align: center; padding: 0px;} 
+    .identitas .nama{border-radius: 0px 0px 0px 0px;  margin-bottom: 10px;  text-align: center;} 
+    .identitas .kontak{border-radius: 15px 15px 0px 0px;  margin-bottom: 2px;} 
+    .identitas .kontak p{margin: 10px auto 10px auto;} 
+    .identitas .rincian{border-radius: 0px 0px 15px 15px;  display: flex;  flex-direction: row; justify-content: space-between;} 
+    .identitas .rincian p{margin: 10px auto 10px auto;} 
+    .tmp-pengalaman .pengalaman div, #keahlian .andalan div, #keahlian_sertifikat .andalan_surat div {width: 100%;} 
+    .tmp-pengalaman .pengalaman .pt{border-radius: 15px 15px 0px 0px;  padding: 1px 0px 1px 0px;} 
+    .pengalaman .pas, .pengalaman .pt{padding-top: 0px;  display: block;} 
+    .tmp-pengalaman .pengalaman .jobdesk{border-radius: 0px 0px 15px 15px;  padding: 1px 0px 1px 0px;} 
+    .andalan .keahlian ul, .andalan_surat .keahlian_sertifikat ul {text-align: left; padding-right: 0px;} 
+    .pengalaman .jobdesk ul{text-align: left; padding-right: 20px;} 
+    header h1{width: 94%; margin: 0 auto; padding: 0 8px;} 
+    header .mode .galeri-container, .galeri-container{position: static; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; width: 100%; margin: 0 auto 18px auto; padding: 0 12px;} 
+    .galeri-container a.galeri{font-size: 14px; padding: 8px 10px;} 
+    .pddkn .sklh{padding-left: 20px;  padding-right: 20px;}
+}
+
+@media screen and (max-width: 400px) {
+    .identitas .rincian p{margin: auto 0px auto 0px;  padding: 0px 2px 0px 2px;} 
+    .identitas .rincian hr.garis{display: inline;}
+}
+
+/* CSS TOMBOL MODE */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 18px 0 22px 0;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.toggle-label {
+    width: 92px;
+    height: 46px;
+    padding: 4px;
+    border-radius: 999px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #68c9ff 0%, #f8d36a 100%);
+    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.55), 0px 8px 18px rgba(0, 0, 0, 0.22);
+    transition: background 0.45s ease, box-shadow 0.45s ease, transform 0.45s ease;
+}
+
+.toggle-label::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 24% 64%, rgba(255, 255, 255, 0.9) 0 6px, transparent 7px),
+        radial-gradient(circle at 34% 61%, rgba(255, 255, 255, 0.75) 0 10px, transparent 11px),
+        radial-gradient(circle at 47% 66%, rgba(255, 255, 255, 0.65) 0 7px, transparent 8px);
+    opacity: 1;
+    transition: opacity 0.45s ease, background 0.45s ease;
+}
+
+.gelap .toggle-label {
+    background: linear-gradient(135deg, #111827 0%, #243b73 62%, #4f46e5 100%);
+    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.16), 0px 8px 18px rgba(0, 0, 0, 0.38);
+}
+
+.gelap .toggle-label::before {
+    background:
+        radial-gradient(circle at 28% 26%, rgba(255, 255, 255, 0.95) 0 1px, transparent 2px),
+        radial-gradient(circle at 38% 72%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px),
+        radial-gradient(circle at 58% 32%, rgba(255, 255, 255, 0.9) 0 1px, transparent 2px),
+        radial-gradient(circle at 74% 67%, rgba(255, 255, 255, 0.75) 0 1px, transparent 2px);
+}
+
+.toggle-label:hover {
+    transform: translateY(-1px);
+}
+
+.toggle-checkbox:focus-visible + .toggle-label {
+    outline: 3px solid rgba(59, 130, 246, 0.75);
+    outline-offset: 4px;
+}
+
+.toggle-ball {
+    width: 38px;
+    height: 38px;
+    background: radial-gradient(circle at 35% 30%, #fff7b2 0 5px, #ffd34d 6px 18px, #f59e0b 100%);
+    border-radius: 50%;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), background 0.45s ease, box-shadow 0.45s ease;
+    z-index: 2;
+    box-shadow: 0px 4px 10px rgba(146, 64, 14, 0.42);
+}
+
+.toggle-ball::before {
+    content: "";
+    position: absolute;
+    inset: 8px 9px 9px 15px;
+    border-radius: 50%;
+    background: rgba(109, 121, 168, 0.58);
+    box-shadow: -8px 9px 0 -3px rgba(109, 121, 168, 0.55), 8px 8px 0 -4px rgba(109, 121, 168, 0.48);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-ball {
+    transform: translateX(46px);
+    background: radial-gradient(circle at 34% 28%, #f8fbff 0 5px, #d8e3ff 6px 18px, #93a8da 100%);
+    box-shadow: 0px 4px 12px rgba(15, 23, 42, 0.52);
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-ball::before {
+    opacity: 1;
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.icon svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.sun {
+    left: 12px;
+    opacity: 0.98;
+    transform: scale(1);
+}
+
+.moon {
+    right: 12px;
+    color: #eef2ff;
+    opacity: 0.42;
+    transform: scale(0.88) rotate(8deg);
+}
+
+.toggle-checkbox:checked + .toggle-label .sun {
+    opacity: 0.38;
+    transform: scale(0.82) rotate(-18deg);
+}
+
+.toggle-checkbox:checked + .toggle-label .moon {
+    opacity: 1;
+    transform: scale(1.08) rotate(-8deg);
+}
+
+body.gelap .sun svg {
+    opacity: 0.78;
+}
+
+body.gelap .moon svg {
+    stroke: #f8fafc;
+}
+
+@media screen and (max-width: 480px) {
+    .toggle-container {
+        margin: 14px 0 18px 0;
+    }
+
+    .toggle-label {
+        width: 84px;
+        height: 42px;
+    }
+
+    .toggle-ball {
+        width: 34px;
+        height: 34px;
+    }
+
+    .toggle-checkbox:checked + .toggle-label .toggle-ball {
+        transform: translateX(42px);
+    }
+
+    .sun {
+        left: 11px;
+    }
+
+    .moon {
+        right: 11px;
+    }
+}
