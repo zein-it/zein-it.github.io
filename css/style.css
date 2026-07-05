@@ -178,9 +178,9 @@ div.tmp-pengalaman a img:hover, #keahlian a img:hover, #keahlian_sertifikat a im
 
 .pddkn .sklh {padding-right: 20px;} 
 
-.ringkasan:hover, #keahlian:hover,/* #keahlian_sertifikat:hover,*/ .tmp-pengalaman:hover {transition: all 0.2s ease-in-out; transform: scale(1.05); box-shadow: 0px 0px 10px 5px mediumvioletred;}
+.ringkasan:hover,/* #keahlian:hover, #keahlian_sertifikat:hover,*/ .tmp-pengalaman:hover, .tmp-pddkn:hover {transition: all 0.2s ease-in-out; transform: scale(1.05); box-shadow: 0px 0px 10px 5px mediumvioletred;}
 
-.gelap .ringkasan:hover, .gelap #keahlian:hover,/* .gelap #keahlian_sertifikat:hover,*/ .gelap .tmp-pengalaman:hover {transition: all 0.2s ease-in-out; transform: scale(1.05); box-shadow: 0px 0px 10px 5px tan;} 
+.gelap .ringkasan:hover,/* .gelap #keahlian:hover, .gelap #keahlian_sertifikat:hover,*/ .gelap .tmp-pengalaman:hover, .tmp-pddkn:hover {transition: all 0.2s ease-in-out; transform: scale(1.05); box-shadow: 0px 0px 10px 5px tan;} 
 
 .tentang-saya:hover, .ringkasan:hover, #keahlian:hover, #keahlian_sertifikat:hover, .tmp-pengalaman:hover, .tmp-pddkn:hover {box-shadow: 0px 0px 10px 5px mediumvioletred;} 
 
