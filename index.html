@@ -7,7 +7,10 @@
     <title>CV Akhmad Jaini</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/slide.css">
+    <link rel="stylesheet" href="css/lightgallery.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/gallery-controls.css">
+    <link rel="stylesheet" href="css/print.css">
     <script src="js/devtools.js"></script>
     <script src='js/jquery-3.6.0.js?ver=3.6.0' id='jquery-core-js'></script>
 </head>
@@ -20,19 +23,24 @@
             <div class="toggle-container">
                 <input type="checkbox" id="toggle-mode" class="toggle-checkbox" aria-label="Ganti mode terang atau gelap">
                 <label for="toggle-mode" class="toggle-label">
-                    <span class="icon sun">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" fill="white" />
-                            <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" stroke="white" />
-                        </svg>                                                                    
+                    <span class="toggle-liquid" aria-hidden="true">
+                        <span class="toggle-text toggle-text-light">Light</span>
+                        <span class="toggle-text toggle-text-dark">Dark</span>
                     </span>
-                    <span class="toggle-ball"></span>
-                    <span class="icon moon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-                        </svg>                        
+                    <span class="toggle-ball" aria-hidden="true">
+                        <span class="icon sun">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" fill="white" />
+                                <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" stroke="white" />
+                            </svg>
+                        </span>
+                        <span class="icon moon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                            </svg>
+                        </span>
                     </span>
                 </label>
             </div>
@@ -66,6 +74,20 @@
                         <path d="M0,22C10,30,30,30,50,22S90,10,120,22s30,22,40,22H0Z"></path>
                     </svg>
                 </a>
+
+                <button type="button" class="galeri print-button tombol-terang" data-print-button>
+                    <span>Print</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 44" preserveAspectRatio="none">
+                        <path d="M0,22C10,30,30,30,50,22S90,10,120,22s30,22,40,22H0Z"></path>
+                    </svg>
+                </button>
+
+                <button type="button" class="galeri print-button tombol-gelap" data-print-button>
+                    <span>Print</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 44" preserveAspectRatio="none">
+                        <path d="M0,22C10,30,30,30,50,22S90,10,120,22s30,22,40,22H0Z"></path>
+                    </svg>
+                </button>
 
             </div>
         </p>
@@ -104,7 +126,7 @@
                 </p>
             </div>
             <div class="rincian">
-                <p>Lajang<br>34 tahun</p>
+                <p>Lajang<br><span data-birth-date="1992-02-03">34</span> tahun</p>
                 <hr class="garis"><p>Laki-laki<br>Islam</p>
                 <hr class="garis"><p>Kalimantan Selatan<br>Indonesia</p>
             </div>
@@ -115,7 +137,7 @@
 <section id="ringkasan">
     <div class="ringkasan">
         <h3>Tentang saya</h3><hr>
-        <p>Seorang lulusan D3 - Teknik Komputer yang memiliki pengalaman dibidang IT lebih dari 10 tahun. Memiliki kemampuan analisis, logika dan pemecahan masalah yang cermat dan tepat. Dapat menyesuaikan lingkungan kerja dan mampu bekerja sama baik dalam tim ataupun individu.</p>
+        <p>Seorang lulusan D3 - Teknik Komputer yang memiliki pengalaman dibidang IT lebih dari <span data-experience-total>10</span> tahun. Memiliki kemampuan analisis, logika dan pemecahan masalah yang cermat dan tepat. Dapat menyesuaikan lingkungan kerja dan mampu bekerja sama baik dalam tim ataupun individu.</p>
         <hr/>
     </div>
 </section>
@@ -156,10 +178,10 @@
             <div class="pt">
                 <p>
                     <a class="nama1" href="img/galeri_13.jpg" data-fancybox="pengalaman" data-caption="ICT Officer - Modulasi radio komunikasi">ICT Officer</a><br>
-                    <a class="nama3">Feb 2025 - Sekarang</a>
+                    <a class="nama3" data-experience-range>Feb 2025 - Sekarang</a>
                 </p>
                 <p>
-                    <a class="nama2" href="img/pra_pop.jpg" data-fancybox="pengalaman" data-caption="Sertifikasi Pra POP - PT. PSI">PT. Prospero Sejahtera Inara</a><br>
+                    <a class="nama2" href="img/pra_pop.jpg" data-fancybox="pengalaman" data-no-caption>PT. Prospero Sejahtera Inara</a><br>
                     <a class="nama3">Pertambangan</a>
                 </p>
             </div>
@@ -177,31 +199,32 @@
         <div class="pengalaman">
             <div class="pt">
                 <p>
-                    <a class="nama1" href="img/galeri_05.jpg" data-fancybox="pengalaman" data-caption="ICT Support Engineer - Tugas di site CK-BIB">ICT Support Engineer</a><br>
-                    <a class="nama3">Nov 2022 - Mar 2024</a>
+                    <a class="nama1" href="img/galeri_05.jpg" data-fancybox="pengalaman" data-caption="ICT Support Engineer - Onsite CK-BIB">ICT Support Engineer</a><br>
+                    <a class="nama3" data-experience-range>Nov 2022 - Mar 2024</a>
                 </p>
                 <p>
-                    <a class="nama2" href="img/spl_gss.jpg" data-fancybox="pengalaman" data-caption="Surat Pengalaman Kerja PT. Global Smart Solusindo">PT. Global Smart Solusindo</a><br>
+                    <a class="nama2" href="img/spl_gss.jpg" data-fancybox="pengalaman" data-no-caption>PT. Global Smart Solusindo</a><br>
                     <a class="nama3">Layanan IT</a>
                 </p>
             </div>
             <div class="jobdesk">
                 <ul>
                     <li>Ditugaskan ke beberapa lokasi site projek pertambangan<br>PT. Cipta Kridatama sebagai ICT Support Engineer</li>
-                    <li>Beradaptasi di lingkungan kerja dan menjaga sistem IT tetap berjalan.</li>
+                    <!-- <li>Beradaptasi di lingkungan kerja dan menjaga sistem IT tetap berjalan.</li> -->
                     <li>Pemantauan & pemecahan masalah infrastruktur IT</li>
                     <li>Memastikan perangkat bekerja optimal dalam kondisi lingkungan yang menantang</li>
+                    <li>Bertindak sebagai jembatan antara pengguna dan tim IT pusat</li>
                 </ul>
             </div>
         </div>
         <div class="pengalaman">
             <div class="pt">
                 <p>
-                    <a class="nama1" href="img/galeri_01.jpg" data-fancybox="pengalaman" data-caption="IT Support - Perawatan CPU komputer">IT Support</a><br>
-                    <a class="nama3">Mei 2019 - Jul 2020</a>
+                    <a class="nama1" href="img/galeri_01.jpg" data-fancybox="pengalaman" data-caption="IT Support - Perawatan komputer">IT Support</a><br>
+                    <a class="nama3" data-experience-range>Mei 2019 - Jul 2020</a>
                 </p>
                 <p>
-                    <a class="nama2" href="img/spl_pas.jpg" data-fancybox="pengalaman" data-caption="Surat Pengalaman Kerja PT. Plantindo Agro Subur">PT. Plantindo Agro Subur</a><br>
+                    <a class="nama2" href="img/spl_pas.jpg" data-fancybox="pengalaman" data-no-caption>PT. Plantindo Agro Subur</a><br>
                     <a class="nama3">Perkebunan</a>
                 </p>
             </div>
@@ -220,11 +243,11 @@
         <div class="pengalaman">
             <div class="pt">
                 <p>
-                    <a class="nama1" href="img/galeri_16.jpg" data-fancybox="pengalaman" data-caption="Teknisi Profesional - Perbaikan komputer pelanggan">Teknisi Profesional</a><br>
-                    <a class="nama3">Jan 2013 - Mar 2018</a>
+                    <a class="nama1" href="img/galeri_16.jpg" data-fancybox="pengalaman" data-caption="Teknisi Profesional - Perbaikan komputer">Teknisi Profesional</a><br>
+                    <a class="nama3" data-experience-range>Jan 2013 - Mar 2018</a>
                 </p>
                 <p>
-                    <a class="nama2" href="img/spl_ans.jpg" data-fancybox="pengalaman" data-caption="Surat Pengalaman Kerja ANS Computer">ANS Computer</a><br>
+                    <a class="nama2" href="img/spl_ans.jpg" data-fancybox="pengalaman" data-no-caption>ANS Computer</a><br>
                     <a class="nama3">Layanan IT</a>
                 </p>
             </div>
@@ -253,26 +276,27 @@
             <ul>
                 <li data-index="0">Working at Height</li>
                 <li data-index="1">Cisco : CCNA</li>
-                <li data-index="2">Pra POP</li>
+                <li data-index="2">Pra-POP</li>
                 <li data-index="3">Fortinet</li>
-                <li data-index="4">Mikrotik</li>
-                <li data-index="5">Data Science</li>
+                <li data-index="4">Ruijie : RCNA</li>
+                <li data-index="5">Mikrotik</li>
             </ul>
         </div>
         
         <div class="gambar_sertifikat">
             <div class="slide-container">
                 <div class="slides">
-                    <img src="img/wahs.jpg" class="active">
-                    <img src="img/CCNA-_Enterprise_Networking.jpg">
-                    <img src="img/CCNA_Enterpris-certificate.jpg">
-                    <img src="img/CCNA-_Switching-_Routing.jpg">
-                    <img src="img/CCNA_Switching-certificate.jpg">
-                    <img src="img/CCNA_Introduct-certificate.jpg">
-                    <img src="img/pra_pop.jpg">
-                    <img src="img/Fortinet_Associate_Cybersecurity.jpg">
-                    <img src="img/Mikrotik-Dasar.jpg">
-                    <img src="img/certificate-DQLABFREECLASS01PFDHBB.jpg">
+                    <img src="img/wahs.jpg" class="active" alt="Working at Height" data-full="img/wah.jpg">
+                    <img src="img/CCNA-_Enterprise_Networking.jpg" alt="CCNA Enterprise Networking">
+                    <img src="img/CCNA_Enterpris-certificate.jpg" alt="CCNA Enterprise Certificate">
+                    <img src="img/CCNA-_Switching-_Routing.jpg" alt="CCNA Switching Routing">
+                    <img src="img/CCNA_Switching-certificate.jpg" alt="CCNA Switching Certificate">
+                    <img src="img/CCNA_Introduct-certificate.jpg" alt="CCNA Introduction Certificate">
+                    <img src="img/pra_pop.jpg" alt="Pra-POP">
+                    <img src="img/Fortinet_Associate_Cybersecurity.jpg" alt="Fortinet Associate Cybersecurity">
+                    <img src="img/RCNA-RnS.jpg" alt="Ruijie RCNA Routing and Switching">
+                    <img src="img/Mikrotik-Dasar.jpg" alt="Mikrotik Dasar">
+                    <!-- <img src="img/certificate-DQLABFREECLASS01PFDHBB.jpg"> -->
                 </div>
             </div>
         </div>
@@ -316,9 +340,12 @@
     <div id="i" >Konten dilindungi hak cipta © Zein-IT.</div>
 
     <script src="js/jquery-3.6.0.js"></script>
-    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/lightgallery.js"></script>
+    <script src="js/gallery-controls.js"></script>
     <script src="js/copyright.js"></script>
     <script src="js/slide.js"></script>
+    <script src="js/profile-dynamic.js"></script>
+    <script src="js/print.js"></script>
     <script src="js/toggle-mode.js"></script>
 
 </body>

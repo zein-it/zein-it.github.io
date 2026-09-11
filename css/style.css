@@ -212,9 +212,11 @@ footer .hak-cipta {margin-top: 15px;  padding: 5px;  border-top: 2px solid #b71c
 }
 
 /* 2. Gaya umum tombol */
-.galeri-container a.galeri {
+.galeri-container a.galeri,
+.galeri-container button.galeri {
     display: inline-block;
     position: relative;
+    border: none;
     padding: 8px 11px; 
     font-size: 16px;
     font-weight: bold;
@@ -228,7 +230,8 @@ footer .hak-cipta {margin-top: 15px;  padding: 5px;  border-top: 2px solid #b71c
     transition: all 0.3s ease;
 }
 
-.galeri-container a.galeri span {
+.galeri-container a.galeri span,
+.galeri-container button.galeri span {
     position: relative;
     z-index: 20;
     letter-spacing: 1px;
@@ -239,15 +242,18 @@ footer .hak-cipta {margin-top: 15px;  padding: 5px;  border-top: 2px solid #b71c
     background-color: darkorange;
 } */
 
-.galeri-container a.tombol-terang:hover {
+.galeri-container a.tombol-terang:hover,
+.galeri-container button.tombol-terang:hover {
     background-color: midnightblue;
 }
 
-.galeri-container a.tombol-gelap:hover {
+.galeri-container a.tombol-gelap:hover,
+.galeri-container button.tombol-gelap:hover {
     background-color: rgb(228, 126, 2);
 }
 
-.galeri-container a.galeri svg {
+.galeri-container a.galeri svg,
+.galeri-container button.galeri svg {
     position: absolute;
     top: 0;
     left: 0;
@@ -257,12 +263,14 @@ footer .hak-cipta {margin-top: 15px;  padding: 5px;  border-top: 2px solid #b71c
     transition: all 0.3s ease;
 }
 
-.galeri-container a.galeri svg path {
+.galeri-container a.galeri svg path,
+.galeri-container button.galeri svg path {
     fill: transparent; /* Path tidak terlihat awalnya */
     transition: fill 0.3s ease;
 }
 
-.galeri-container a.galeri:hover svg path {
+.galeri-container a.galeri:hover svg path,
+.galeri-container button.galeri:hover svg path {
     fill: rgba(255, 255, 255, 0.158); /* Warna saat hover */
 }
 
@@ -288,14 +296,16 @@ footer .hak-cipta {margin-top: 15px;  padding: 5px;  border-top: 2px solid #b71c
         right: 10px;
     }
 
-    .galeri-container a.galeri {
+    .galeri-container a.galeri,
+    .galeri-container button.galeri {
         font-size: 14px;
         padding: 8px 16px;
     }
 }
 
 @media screen and (min-width: 1025px) {
-    .galeri-container a.galeri {
+    .galeri-container a.galeri,
+    .galeri-container button.galeri {
         font-size: 16px;
     }
 }
@@ -318,7 +328,7 @@ footer .hak-cipta {margin-top: 15px;  padding: 5px;  border-top: 2px solid #b71c
     .pengalaman .jobdesk ul{text-align: left; padding-right: 20px;} 
     header h1{width: 94%; margin: 0 auto; padding: 0 8px;} 
     header .mode .galeri-container, .galeri-container{position: static; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; width: 100%; margin: 0 auto 18px auto; padding: 0 12px;} 
-    .galeri-container a.galeri{font-size: 14px; padding: 8px 10px;} 
+    .galeri-container a.galeri, .galeri-container button.galeri{font-size: 14px; padding: 8px 10px;} 
     .pddkn .sklh{padding-left: 20px;  padding-right: 20px;}
 }
 
@@ -332,7 +342,7 @@ footer .hak-cipta {margin-top: 15px;  padding: 5px;  border-top: 2px solid #b71c
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 18px 0 22px 0;
+    margin: 18px 0 24px 0;
 }
 
 .toggle-checkbox {
@@ -344,48 +354,113 @@ footer .hak-cipta {margin-top: 15px;  padding: 5px;  border-top: 2px solid #b71c
 }
 
 .toggle-label {
-    width: 92px;
-    height: 46px;
-    padding: 4px;
+    width: 154px;
+    height: 66px;
     border-radius: 999px;
     position: relative;
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    background: linear-gradient(135deg, #68c9ff 0%, #f8d36a 100%);
-    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.55), 0px 8px 18px rgba(0, 0, 0, 0.22);
-    transition: background 0.45s ease, box-shadow 0.45s ease, transform 0.45s ease;
+    display: block;
+    overflow: visible;
+    isolation: isolate;
+    transition: transform 0.35s ease;
 }
 
-.toggle-label::before {
+.toggle-liquid {
+    position: absolute;
+    inset: 11px 3px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 999px;
+    overflow: hidden;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.72) 0%, rgba(186, 230, 253, 0.48) 45%, rgba(251, 191, 36, 0.34) 100%),
+        rgba(255, 255, 255, 0.2);
+    box-shadow:
+        inset 0px 4px 8px rgba(255, 255, 255, 0.75),
+        inset 0px -8px 14px rgba(15, 23, 42, 0.16),
+        0px 9px 18px rgba(15, 23, 42, 0.2);
+    transition: background 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease;
+    z-index: 1;
+}
+
+.toggle-liquid::before,
+.toggle-ball::after {
+    content: "";
+    position: absolute;
+    left: 13%;
+    right: 13%;
+    top: 5px;
+    height: 39%;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.12));
+    pointer-events: none;
+}
+
+.toggle-liquid::after {
     content: "";
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 24% 64%, rgba(255, 255, 255, 0.9) 0 6px, transparent 7px),
-        radial-gradient(circle at 34% 61%, rgba(255, 255, 255, 0.75) 0 10px, transparent 11px),
-        radial-gradient(circle at 47% 66%, rgba(255, 255, 255, 0.65) 0 7px, transparent 8px);
-    opacity: 1;
-    transition: opacity 0.45s ease, background 0.45s ease;
+        linear-gradient(90deg, rgba(255, 255, 255, 0.12), transparent 32%, rgba(255, 255, 255, 0.18) 50%, transparent 68%, rgba(255, 255, 255, 0.1)),
+        radial-gradient(circle at 24% 74%, rgba(255, 255, 255, 0.58) 0 6px, transparent 7px);
+    opacity: 0.8;
+    pointer-events: none;
 }
 
-.gelap .toggle-label {
-    background: linear-gradient(135deg, #111827 0%, #243b73 62%, #4f46e5 100%);
-    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.16), 0px 8px 18px rgba(0, 0, 0, 0.38);
-}
-
-.gelap .toggle-label::before {
+.gelap .toggle-liquid,
+.toggle-checkbox:checked + .toggle-label .toggle-liquid {
+    border-color: rgba(191, 219, 254, 0.46);
     background:
-        radial-gradient(circle at 28% 26%, rgba(255, 255, 255, 0.95) 0 1px, transparent 2px),
-        radial-gradient(circle at 38% 72%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px),
-        radial-gradient(circle at 58% 32%, rgba(255, 255, 255, 0.9) 0 1px, transparent 2px),
-        radial-gradient(circle at 74% 67%, rgba(255, 255, 255, 0.75) 0 1px, transparent 2px);
+        linear-gradient(145deg, rgba(22, 78, 99, 0.72) 0%, rgba(30, 41, 59, 0.82) 48%, rgba(2, 6, 23, 0.9) 100%),
+        rgba(15, 23, 42, 0.42);
+    box-shadow:
+        inset 0px 4px 8px rgba(255, 255, 255, 0.22),
+        inset 0px -10px 16px rgba(0, 0, 0, 0.42),
+        0px 9px 20px rgba(0, 0, 0, 0.34);
+}
+
+.toggle-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    color: #7c3f00;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.62);
+    transition: opacity 0.3s ease, transform 0.35s ease, color 0.35s ease;
+    z-index: 2;
+}
+
+.toggle-text-light {
+    justify-content: flex-end;
+    padding: 0 23px 0 62px;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toggle-text-dark {
+    justify-content: flex-start;
+    padding: 0 62px 0 24px;
+    color: #dbeafe;
+    opacity: 0;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    transform: translateX(10px);
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-text-light {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-text-dark {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .toggle-label:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .toggle-checkbox:focus-visible + .toggle-label {
@@ -394,33 +469,58 @@ footer .hak-cipta {margin-top: 15px;  padding: 5px;  border-top: 2px solid #b71c
 }
 
 .toggle-ball {
-    width: 38px;
-    height: 38px;
-    background: radial-gradient(circle at 35% 30%, #fff7b2 0 5px, #ffd34d 6px 18px, #f59e0b 100%);
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
     position: absolute;
-    left: 4px;
+    left: 1px;
     top: 4px;
-    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), background 0.45s ease, box-shadow 0.45s ease;
-    z-index: 2;
-    box-shadow: 0px 4px 10px rgba(146, 64, 14, 0.42);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.92) 0 4px, rgba(255, 255, 255, 0.22) 5px 16px, transparent 17px),
+        linear-gradient(145deg, rgba(255, 249, 196, 0.86), rgba(251, 191, 36, 0.72));
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+        inset 0px 5px 9px rgba(255, 255, 255, 0.7),
+        inset 0px -9px 13px rgba(180, 83, 9, 0.22),
+        0px 8px 16px rgba(146, 64, 14, 0.38);
+    z-index: 3;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), background 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease;
 }
 
 .toggle-ball::before {
     content: "";
     position: absolute;
-    inset: 8px 9px 9px 15px;
+    inset: 10px 11px 11px 17px;
     border-radius: 50%;
-    background: rgba(109, 121, 168, 0.58);
-    box-shadow: -8px 9px 0 -3px rgba(109, 121, 168, 0.55), 8px 8px 0 -4px rgba(109, 121, 168, 0.48);
+    background: rgba(96, 165, 250, 0.42);
+    box-shadow:
+        -8px 10px 0 -3px rgba(96, 165, 250, 0.34),
+        9px 8px 0 -4px rgba(96, 165, 250, 0.28);
     opacity: 0;
     transition: opacity 0.35s ease;
 }
 
+.toggle-ball::after {
+    left: 20%;
+    right: 20%;
+    top: 7px;
+    height: 28%;
+    z-index: 1;
+}
+
 .toggle-checkbox:checked + .toggle-label .toggle-ball {
-    transform: translateX(46px);
-    background: radial-gradient(circle at 34% 28%, #f8fbff 0 5px, #d8e3ff 6px 18px, #93a8da 100%);
-    box-shadow: 0px 4px 12px rgba(15, 23, 42, 0.52);
+    transform: translateX(94px);
+    background:
+        radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.78) 0 4px, rgba(255, 255, 255, 0.15) 5px 16px, transparent 17px),
+        linear-gradient(145deg, rgba(219, 234, 254, 0.82), rgba(51, 65, 85, 0.82));
+    border-color: rgba(191, 219, 254, 0.64);
+    box-shadow:
+        inset 0px 5px 9px rgba(255, 255, 255, 0.34),
+        inset 0px -10px 14px rgba(2, 6, 23, 0.38),
+        0px 8px 18px rgba(2, 6, 23, 0.48);
 }
 
 .toggle-checkbox:checked + .toggle-label .toggle-ball::before {
@@ -428,44 +528,44 @@ footer .hak-cipta {margin-top: 15px;  padding: 5px;  border-top: 2px solid #b71c
 }
 
 .icon {
-    width: 22px;
-    height: 22px;
+    width: 26px;
+    height: 26px;
     position: absolute;
-    z-index: 3;
+    inset: 50% auto auto 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     pointer-events: none;
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    z-index: 2;
+    transition: opacity 0.35s ease, transform 0.35s ease, color 0.35s ease;
 }
 
 .icon svg {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     display: block;
 }
 
 .sun {
-    left: 12px;
+    color: #fff7ed;
     opacity: 0.98;
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .moon {
-    right: 12px;
-    color: #eef2ff;
-    opacity: 0.42;
-    transform: scale(0.88) rotate(8deg);
+    color: #eff6ff;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.72) rotate(12deg);
 }
 
 .toggle-checkbox:checked + .toggle-label .sun {
-    opacity: 0.38;
-    transform: scale(0.82) rotate(-18deg);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.72) rotate(-16deg);
 }
 
 .toggle-checkbox:checked + .toggle-label .moon {
     opacity: 1;
-    transform: scale(1.08) rotate(-8deg);
+    transform: translate(-50%, -50%) scale(1.04) rotate(-8deg);
 }
 
 body.gelap .sun svg {
@@ -478,28 +578,32 @@ body.gelap .moon svg {
 
 @media screen and (max-width: 480px) {
     .toggle-container {
-        margin: 14px 0 18px 0;
+        margin: 14px 0 20px 0;
     }
 
     .toggle-label {
-        width: 84px;
-        height: 42px;
+        width: 136px;
+        height: 60px;
     }
 
     .toggle-ball {
-        width: 34px;
-        height: 34px;
+        width: 52px;
+        height: 52px;
     }
 
     .toggle-checkbox:checked + .toggle-label .toggle-ball {
-        transform: translateX(42px);
+        transform: translateX(82px);
     }
 
-    .sun {
-        left: 11px;
+    .toggle-text {
+        font-size: 14px;
     }
 
-    .moon {
-        right: 11px;
+    .toggle-text-light {
+        padding: 0 19px 0 56px;
+    }
+
+    .toggle-text-dark {
+        padding: 0 56px 0 20px;
     }
 }

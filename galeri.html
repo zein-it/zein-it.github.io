@@ -5,101 +5,108 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeri Pengalaman Kerja</title>
+    <link rel="stylesheet" href="css/lightgallery.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/gallery-controls.css">
     <script src="js/devtools.js"></script>
     <script src='js/jquery-3.6.0.js?ver=3.6.0' id='jquery-core-js'></script>
     
     <style>
 
-        #i,.i{display: none;position: absolute;z-index: 999999999;background-color: #ffffff;background-repeat: no-repeat;background-position: center center;background-size: cover;opacity:1;border: 1px solid #b7b7b7;border-radius: 3px;box-shadow: rgba(0,0,0,0) 0px 0px 15px1px;color: #ff0000;padding: 5px;font-size: 12px;text-transform: none;}#i > *, .i > *{color: #ff0000;font-size: 12px;}*:not(input):not(textarea)::selection{background-color: transparent !important;color: inherit !important;}*:not(input):not(textarea)::-moz-selection{background-color: transparent !important;color: inherit !important;}* {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;font-family: 'Calibri';color: #fff;text-align: center;}
-        
-        * {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}body{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;background-image: linear-gradient(rgba(0, 0, 0, 0.700),rgba(0, 0, 0, 0.700)), url(img/gambar2.jpg);background-repeat: no-repeat;background-attachment: fixed;background-position: center;background-size: cover;}img {width: 300px;height: 200px;border-radius: 10px;box-shadow: 0px 0px 10px 1px rgba(125, 193, 206,.7);margin: 0.75%;}.imglist {margin: auto;margin-top: 40px;margin-bottom: 30px;text-align: center;}.fancybox-caption {color: #fff;font-size: 20px;text-shadow: 0px 0px 4px black;}.judul {color: #fff;text-align: center;font-weight: bold;font-style: normal;font-size: xx-large;margin-bottom: 0px;}.imglist img:hover {transition: all 0.2s ease-in-out;transform: scale(1.05);box-shadow: 0px 0px 10px 5px rgba(179, 238, 250, 0.7);}.fancybox-button:hover {transition: all 0.2s ease-in-out;transform: scale(1.1);}footer .hak-cipta {text-align: center;font-size: 16px;padding-bottom: 10px;}.tbl-back img {position: absolute;left: 15%;width: 30px;top: 4.5%;height: auto;box-shadow: none;border-radius: 0px;}.tbl-back img:hover {box-shadow: 0px 0px 4px 4px rgba(126, 249, 253, 0.733);transition: all 0.2s ease-in-out;transform: scale(1.3);}@media screen and (max-width:1090px) {.tbl-back img {position: absolute;left: 17%;width: 30px;top: 5.5%;height: auto;box-shadow: none;border-radius: 0px;}.sub-judul {width: 85%;display: block;margin: auto;margin-bottom: -20px;}}
+        #i,.i{display: none;position: absolute;z-index: 999999999;background-color: #ffffff;background-repeat: no-repeat;background-position: center center;background-size: cover;opacity:1;border: 1px solid #b7b7b7;border-radius: 3px;box-shadow: rgba(0,0,0,0) 0px 0px 15px1px;color: #ff0000;padding: 5px;font-size: 12px;text-transform: none;}#i > *, .i > *{color: #ff0000;font-size: 12px;}*:not(input):not(textarea)::selection{background-color: transparent !important;color: inherit !important;}*:not(input):not(textarea)::-moz-selection{background-color: transparent !important;color: inherit !important;}
+
+        * {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;font-family: 'Calibri';color: #fff;margin: 0;padding: 0px;}body {-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;background-image: linear-gradient(rgba(0, 0, 0, 0.700),rgba(0, 0, 0, 0.700)), url(img/gambar2.jpg);background-repeat: no-repeat;background-attachment: fixed;background-position: center;background-size: cover;}footer .hak-cipta {text-align: center;font-size: 16px;padding-bottom: 10px;}.tbl-back img {position: absolute;left: 8%;width: 30px;top: 7%;height: auto;box-shadow: none;border-radius: 0px;}.tbl-back img:hover {box-shadow: 0px 0px 4px 4px rgba(126, 249, 253, 0.733);transition: all 0.2s ease-in-out;transform: scale(1.3);}.judul {color: #fff;text-align: center;font-weight: bold;font-style: normal;font-size: xx-large;padding-top: 3%;margin-bottom: 0px;}.sub-judul {width: 85%;display: block;margin: auto;margin-bottom: -20px;text-align: center;}h3 {font-family: josefin sans;font-size: 25px;text-align: center;text-transform: capitalize;font-weight: 600;padding: 30px 0px;width: 80%;margin: auto;}.container {width: 85%;margin: auto;padding: 30px 0px;}.container > a {display: flex; justify-content: center; align-items: center; font-size: 2em; margin: 2%;}.container a img:hover{transition: all 0.2s ease-in-out;transform: scale(1.05);box-shadow: 0px 0px 10px 5px rgba(179, 238, 250, 0.7);}.container > a > img {width: 100%;height: 100%;object-fit: cover;box-shadow: 0px 0px 10px #000;}.container {display: grid;grid-gap: 5px;grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));grid-auto-rows: 150px;grid-auto-flow: dense;}.horizontal {grid-column: span 2;}.vertical {grid-row: span 2;align-items: baseline;}.big {grid-column: span 2;grid-row: span 2;}@media screen and (max-width:1090px) {.tbl-back img {position: absolute;left: 9%;width: 30px;top: 7%;height: auto;box-shadow: none;border-radius: 0px;}}@media screen and (max-width:490px) {.judul {padding-top: 10%;}}
     </style>
+    <link rel="stylesheet" href="css/print.css">
     
 </head>
 <body oncontextmenu='return false;' ondragstart='return false' onselectstart='return false' style {-moz-user-select: none; cursor: default;}>
 
+<div class="page-actions">
+    <button type="button" class="print-button" data-print-button>Print</button>
+</div>
+
 <p class="judul"><a href="index.html" class="tbl-back"><img src="img/back.png"></a>Galeri</p><br>
 <span class="sub-judul">Dokumentasi Aktifitas Kerja & Surat Pengalaman Kerja</span></br>
 
-    <p class="imglist" style="max-width: 1000px;">
+    <div class="container" id="lightgallery">
 
-        <a href="img/galeri_04.jpg" data-fancybox="images" data-caption="Tugas di site CK-TIA">
+        <a href="img/galeri_04.jpg" class="big" data-fancybox="images" data-caption="Tugas di site CK-TIA">
             <img src="img/galeri_04s.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/galeri_05.jpg" data-fancybox="images" data-caption="Tugas di site CK-BIB">
+        <a href="img/galeri_05.jpg" class="big" data-fancybox="images" data-caption="Tugas di site CK-BIB">
             <img src="img/galeri_05s.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/galeri_06.jpg" data-fancybox="images" data-caption="Tugas di site CK-MHU">
+        <a href="img/galeri_06.jpg" class="big" data-fancybox="images" data-caption="Tugas di site CK-MHU">
             <img src="img/galeri_06s.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/galeri_07.jpg" data-fancybox="images" data-caption="Setting radio RIG">
+        <a href="img/galeri_07.jpg" class="big" data-fancybox="images" data-caption="Pengaturan radio komunikasi pada unit truck">
             <img src="img/galeri_07s.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/galeri_08.jpg" data-fancybox="images" data-caption="Pengecekan antena radio RIG">
+        <a href="img/galeri_08.jpg" class="big" data-fancybox="images" data-caption="Pengecekan radio komunikasi pada unit A2B">
             <img src="img/galeri_08s.jpg" alt="Periksa jaringan anda!">
         </a>
         <!-- <a href="img/galeri_09.jpg" data-fancybox="images" data-caption="Modulasi radio RIG">
             <img src="img/galeri_09s.jpg" alt="Periksa jaringan anda!">
         </a> -->
-        <a href="img/galeri_10.jpg" data-fancybox="images" data-caption="Seting radio link">
+        <a href="img/galeri_10.jpg" class="big" data-fancybox="images" data-caption="Mempersiapkan perangkat Wireless Bridge">
             <img src="img/galeri_10s.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/galeri_11.jpg" data-fancybox="images" data-caption="Pemasangan radio link">
+        <a href="img/galeri_11.jpg" class="big" data-fancybox="images" data-caption="Pemasangan perangkat Wireless Bridge">
             <img src="img/galeri_11s.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/galeri_12.jpg" data-fancybox="images" data-caption="Dukung jaringan perangkat Slope Stability Radar">
+        <a href="img/galeri_12.jpg" class="big" data-fancybox="images" data-caption="Dukung jaringan perangkat Slope Stability Radar">
             <img src="img/galeri_12s.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/galeri_13.jpg" data-fancybox="images" data-caption="Modulasi radio komunikasi">
+        <a href="img/galeri_13.jpg" class="big" data-fancybox="images" data-caption="Modulasi radio komunikasi">
             <img src="img/galeri_13s.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/galeri_14.jpg" data-fancybox="images" data-caption="Cek unit radio komunikasi">
+        <a href="img/galeri_14.jpg" class="big" data-fancybox="images" data-caption="Pengecekan radio komunikasi pada unit A2B">
             <img src="img/galeri_14s.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/galeri_15.jpg" data-fancybox="images" data-caption="Pemasangan unit kamera">
+        <a href="img/galeri_15.jpg" class="big" data-fancybox="images" data-caption="Pemasangan kamera pada unit truck">
             <img src="img/galeri_15.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/cek_narkoba.jpg" data-fancybox="images" data-caption="Hasil tes narkoba">
+        <a href="img/cek_narkoba.jpg" class="big" data-fancybox="images" data-caption="Hasil tes NAPZA">
             <img src="img/cek_narkobas.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/galeri_01.jpg" data-fancybox="images" data-caption="Perawatan CPU komputer">
+        <a href="img/galeri_01.jpg" class="big" data-fancybox="images" data-caption="Perawatan komputer">
             <img src="img/galeri_01.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/galeri_02.jpg" data-fancybox="images" data-caption="Kunjungan dinas kerja ke PT. KAP2">
+        <a href="img/galeri_02.jpg" class="big" data-fancybox="images" data-caption="Kunjungan dinas kerja ke PT. KAP2">
             <img src="img/galeri_02.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/galeri_03.jpg" data-fancybox="images" data-caption="Modulasi radio HT jarak lebih 15 km dari repeater">
+        <a href="img/galeri_03.jpg" class="big" data-fancybox="images" data-caption="Modulasi radio HT jarak lebih 15 km dari repeater">
             <img src="img/galeri_03.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/galeri_16.jpg" data-fancybox="images" data-caption="Perbaikan komputer pelanggan">
+        <a href="img/galeri_16.jpg" class="big" data-fancybox="images" data-caption="Perbaikan komputer">
             <img src="img/galeri_16.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/bk3n2026jb_psi.jpg" data-fancybox="images" data-caption="site PT. Prospero Sejahtera Inara">
+        <a href="img/bk3n2026jb_psi.jpg" class="big" data-fancybox="images" data-no-caption>
             <img src="img/bk3n2026jb_psi_s.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/k3nasional2024-ptck.jpg" data-fancybox="images" data-caption="site PT. Cipta Kridatama">
+        <a href="img/k3nasional2024-ptck.jpg" class="big" data-fancybox="images" data-no-caption>
             <img src="img/k3nasional2024-ptck_s.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/spl_gss.jpg" data-fancybox="images" data-caption="Surat Pengalaman Kerja PT. GSS">
+        <a href="img/spl_gss.jpg" class="big" data-fancybox="images" data-no-caption>
             <img src="img/spl_gss.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/spl_pas.jpg" data-fancybox="images" data-caption="Surat Pengalaman Kerja PT. PAS">
+        <a href="img/spl_pas.jpg" class="big" data-fancybox="images" data-no-caption>
             <img src="img/spl_pas.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/spl_ans.jpg" data-fancybox="images" data-caption="Surat Pengalaman Kerja ANS Computer">
+        <a href="img/spl_ans.jpg" class="big" data-fancybox="images" data-no-caption>
             <img src="img/spl_ans.jpg" alt="Periksa jaringan anda!">
         </a>
         <!-- <a href="img/wah.jpg" data-fancybox="images" data-caption="Sertifikat bekerja di ketinggian">
             <img src="img/wahs.jpg" alt="Periksa jaringan anda!">
         </a> -->
-        <a href="img/mine_permit.jpg" data-fancybox="images" data-caption="Mine Permit PT. MHU">
+        <a href="img/mine_permit.jpg" class="big" data-fancybox="images" data-no-caption>
             <img src="img/mine_permits.jpg" alt="Periksa jaringan anda!">
         </a>
-        <a href="img/training_ptp.jpg" data-fancybox="images" data-caption="BA Training radio link">
+        <a href="img/training_ptp.jpg" class="big" data-fancybox="images" data-no-caption>
             <img src="img/training_ptp.jpg" alt="Periksa jaringan anda!">
         </a>
-    </p>
+    </div>
 
     <footer><div class="hak-cipta">HTML - CSS - Javascript | &copy; 2026. Zein-IT</div></footer>
 
@@ -107,6 +114,8 @@
 
     <script src="js/jquery-3.6.0.js"></script>
     <script src="js/copyright.js"></script>
-    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/lightgallery.js"></script>
+    <script src="js/gallery-controls.js"></script>
+    <script src="js/print.js"></script>
 </body>
 </html>
