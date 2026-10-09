@@ -69,41 +69,56 @@
     body {
         display: grid !important;
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        align-items: stretch !important;
         gap: 2mm !important;
     }
 
     header {
         grid-column: 1 / -1 !important;
+        grid-row: 1 !important;
         order: 0 !important;
     }
 
     #identitas {
         grid-column: 1 / -1 !important;
+        grid-row: 2 !important;
         order: 1 !important;
     }
 
     #ringkasan {
         grid-column: 1 / -1 !important;
+        grid-row: 3 !important;
         order: 2 !important;
     }
 
     #pengalaman {
         grid-column: 1 / -1 !important;
+        grid-row: 4 !important;
         order: 3 !important;
     }
 
     #keahlian {
         grid-column: 1 / span 2 !important;
+        grid-row: 5 !important;
         order: 4 !important;
     }
 
     #keahlian_sertifikat {
         grid-column: 3 !important;
+        grid-row: 5 !important;
         order: 4 !important;
+        padding-left: 5mm !important;
+    }
+
+    #keahlian,
+    #keahlian_sertifikat {
+        align-self: stretch !important;
+        height: 100% !important;
     }
 
     #pddkn {
         grid-column: 1 / -1 !important;
+        grid-row: 6 !important;
         order: 5 !important;
     }
 
@@ -113,10 +128,12 @@
     }
 
     footer {
+        grid-row: 7 !important;
         order: 6 !important;
     }
 
     #i {
+        grid-row: 99 !important;
         order: 99 !important;
     }
 
@@ -163,6 +180,20 @@
         width: 100% !important;
     }
 
+    body #keahlian_sertifikat {
+        position: relative;
+        padding-left: 5mm !important;
+    }
+
+    body #keahlian_sertifikat::before {
+        content: "";
+        position: absolute;
+        top: 12.5%;
+        left: 1.25mm;
+        height: 75%;
+        border-left: 0.25pt solid #777;
+    }
+
     h3 {
         padding: 1.5mm 0 !important;
         margin: 0 !important;
@@ -203,6 +234,10 @@
     #keahlian_sertifikat,
     #keahlian_sertifikat * {
         font-weight: normal !important;
+    }
+
+    #keahlian_sertifikat > h3 {
+        font-weight: bold !important;
     }
 
     #keahlian_sertifikat .keahlian_sertifikat ul li,
